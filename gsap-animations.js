@@ -1,0 +1,420 @@
+(function () {
+    'use strict';
+
+    if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) return;
+
+    document.documentElement.classList.add('gsap-ready');
+
+    var isDesktop = window.matchMedia('(min-width: 1024px)').matches;
+
+    gsap.defaults({ ease: 'power3.out', duration: 0.9 });
+
+    // =========================================================
+    // 1. HERO — cinematic entrance sequence
+    // =========================================================
+    if (isDesktop) {
+        var heroTl = gsap.timeline({ delay: 0.15 });
+        heroTl
+            .from('.hero-ed__badge', { opacity: 0, y: 14, duration: 0.5, ease: 'power2.out' })
+            .from('.hero-ed__title .hero-ed__title-line', { opacity: 0, y: 22, stagger: 0.12, duration: 0.7 }, '-=0.2')
+            .from('.hero-ed__title-script', { opacity: 0, x: -10, duration: 0.5 }, '-=0.3')
+            .from('.hero-ed__title-germany', { opacity: 0, scale: 0.92, duration: 0.8, ease: 'back.out(1.5)' }, '-=0.3')
+            .from('.hero-ed__sub', { opacity: 0, y: 14, duration: 0.6 }, '-=0.4')
+            .from('.hero-ed__actions .hero-ed__btn', { opacity: 0, y: 12, stagger: 0.1, duration: 0.5 }, '-=0.3')
+            .from('.hero-ed__stats .hero-ed__stat', { opacity: 0, y: 10, stagger: 0.08, duration: 0.5 }, '-=0.3')
+            .from('.hero-ed__visual', { opacity: 0, scale: 0.94, duration: 1.2, ease: 'power2.out' }, '-=0.9')
+            .from('.hero-ed__anno', { opacity: 0, scale: 0.85, stagger: 0.1, duration: 0.5, ease: 'back.out(1.6)' }, '-=0.5');
+    } else {
+        gsap.from('.hero-ed__visual', { opacity: 0, duration: 0.6, delay: 0.2 });
+    }
+
+    // =========================================================
+    // 2. ANNOTATION connector line draw animation (desktop only)
+    // =========================================================
+    if (isDesktop) {
+        gsap.utils.toArray('.hero-ed__anno-dot').forEach(function (dot) {
+            gsap.from(dot, {
+                scale: 0,
+                duration: 0.4,
+                delay: 1.8,
+                ease: 'back.out(2)'
+            });
+        });
+    }
+
+    // =========================================================
+    // 3. HERO building subtle floating + parallax
+    // =========================================================
+    if (isDesktop) {
+        gsap.to('.hero-ed__building-img', {
+            y: 8,
+            duration: 3,
+            ease: 'sine.inOut',
+            repeat: -1,
+            yoyo: true
+        });
+    }
+
+    if (isDesktop) {
+        gsap.to('.hero-ed__building-img', {
+            y: -60,
+            ease: 'none',
+            scrollTrigger: {
+                trigger: '.hero-ed',
+                start: 'top top',
+                end: 'bottom top',
+                scrub: 1.5
+            }
+        });
+
+        gsap.to('.hero-ed__anno', {
+            y: -25,
+            ease: 'none',
+            scrollTrigger: {
+                trigger: '.hero-ed',
+                start: 'top top',
+                end: 'bottom top',
+                scrub: 2
+            }
+        });
+    }
+
+    // =========================================================
+    // 4. SECTION TITLE reveals — 3D perspective sweep
+    // =========================================================
+    gsap.utils.toArray('.section-header').forEach(function (header) {
+        var tag = header.querySelector('.section-tag');
+        var title = header.querySelector('.section-title');
+        var desc = header.querySelector('.section-desc');
+
+        var tl = gsap.timeline({
+            scrollTrigger: { trigger: header, start: 'top 85%' }
+        });
+
+        if (tag) tl.from(tag, {
+            opacity: 0, y: 15,
+            rotateX: isDesktop ? 10 : 0,
+            duration: 0.5
+        });
+        if (title) tl.from(title, {
+            opacity: 0, y: 20,
+            rotateX: isDesktop ? 6 : 0,
+            scale: 0.97,
+            duration: 0.7,
+            ease: 'power3.out'
+        }, '-=0.3');
+        if (desc) tl.from(desc, {
+            opacity: 0, y: 12,
+            duration: 0.5
+        }, '-=0.3');
+    });
+
+    // =========================================================
+    // 5. STAGGERED CARD reveals per section — 3D perspective entrance
+    // =========================================================
+    var cardSections = [
+        { trigger: '.social-proof', cards: '.social-proof .proof-item', y: 40, rotateX: 8 },
+        { trigger: '.about', cards: '.about .highlight', y: 20, rotateX: 4, delay: 0.3 },
+        { trigger: '.journey', cards: '.journey .journey-step', y: 40, rotateX: 6 },
+        { trigger: '.services', cards: '.services .service-card', y: 40, rotateX: 10, scale: 0.96 },
+        { trigger: '.success', cards: '.success .success-card', y: 35, rotateX: 8, scale: 0.96 },
+        { trigger: '.programs', cards: '.programs .program-card', y: 35, rotateX: 6 },
+        { trigger: '.video-section', cards: '.video-section .video-card', y: 30, rotateX: 8, scale: 0.96 },
+        { trigger: '.why-us', cards: '.why-us .why-card', y: 30, rotateX: 6 },
+        { trigger: '.faq', cards: '.faq .faq-item', y: 15 },
+        { trigger: '.insta-section', cards: '.insta-section .insta-item', y: 25, scale: 0.95, rotateX: 5 }
+    ];
+
+    cardSections.forEach(function (cfg) {
+        var els = document.querySelectorAll(cfg.cards);
+        if (!els.length) return;
+
+        var fromVars = {
+            opacity: 0,
+            y: isDesktop ? cfg.y : Math.min(cfg.y, 20),
+            scale: cfg.scale || 1,
+            stagger: isDesktop ? 0.1 : 0.05,
+            duration: isDesktop ? 0.8 : 0.5,
+            delay: cfg.delay || 0,
+            ease: 'power3.out',
+            scrollTrigger: {
+                trigger: cfg.trigger,
+                start: 'top 78%'
+            }
+        };
+
+        if (isDesktop && cfg.rotateX) {
+            fromVars.rotateX = cfg.rotateX;
+        }
+
+        gsap.from(els, fromVars);
+    });
+
+    // About split layout — 3D panel entrance
+    gsap.from('.about .about-main', {
+        opacity: 0,
+        x: isDesktop ? -35 : 0,
+        y: isDesktop ? 0 : 20,
+        rotateY: isDesktop ? 8 : 0,
+        duration: 1,
+        ease: 'power3.out',
+        scrollTrigger: { trigger: '.about', start: 'top 75%' }
+    });
+
+    gsap.from('.about .about-image-card', {
+        opacity: 0,
+        x: isDesktop ? 35 : 0,
+        y: isDesktop ? 0 : 20,
+        rotateY: isDesktop ? -8 : 0,
+        scale: isDesktop ? 0.95 : 1,
+        duration: 1,
+        ease: 'power3.out',
+        scrollTrigger: { trigger: '.about .about-side', start: 'top 80%' }
+    });
+
+    // Lead form split — 3D panel entrance
+    gsap.from('.lead-form .lead-form-info', {
+        opacity: 0,
+        x: isDesktop ? -30 : 0,
+        y: isDesktop ? 0 : 20,
+        rotateY: isDesktop ? 6 : 0,
+        duration: 0.9,
+        ease: 'power3.out',
+        scrollTrigger: { trigger: '.lead-form', start: 'top 78%' }
+    });
+
+    gsap.from('.lead-form .lead-form-card', {
+        opacity: 0,
+        x: isDesktop ? 30 : 0,
+        y: isDesktop ? 0 : 20,
+        rotateY: isDesktop ? -6 : 0,
+        duration: 0.9,
+        ease: 'power3.out',
+        scrollTrigger: { trigger: '.lead-form', start: 'top 78%' }
+    });
+
+    // Branch split — 3D panel entrance
+    gsap.from('.branch .branch-gallery', {
+        opacity: 0,
+        x: isDesktop ? -30 : 0,
+        y: isDesktop ? 0 : 20,
+        rotateY: isDesktop ? 6 : 0,
+        duration: 0.9,
+        ease: 'power3.out',
+        scrollTrigger: { trigger: '.branch', start: 'top 78%' }
+    });
+
+    gsap.from('.branch .branch-info', {
+        opacity: 0,
+        x: isDesktop ? 30 : 0,
+        y: isDesktop ? 0 : 20,
+        rotateY: isDesktop ? -6 : 0,
+        duration: 0.9,
+        ease: 'power3.out',
+        scrollTrigger: { trigger: '.branch .branch-content', start: 'top 82%' }
+    });
+
+    // =========================================================
+    // 6. TIMELINE progress line fill (journey section)
+    // =========================================================
+    var journeyLine = document.querySelector('.journey .journey-line');
+    if (journeyLine) {
+        gsap.from(journeyLine, {
+            scaleY: 0,
+            transformOrigin: 'top center',
+            duration: 1.5,
+            ease: 'power2.out',
+            scrollTrigger: {
+                trigger: '.journey .journey-track',
+                start: 'top 75%'
+            }
+        });
+    }
+
+    // =========================================================
+    // 7. STATS counter animation
+    // =========================================================
+    gsap.utils.toArray('[data-count]').forEach(function (el) {
+        var target = parseInt(el.getAttribute('data-count'), 10);
+        if (isNaN(target)) return;
+
+        var obj = { val: 0 };
+        ScrollTrigger.create({
+            trigger: el,
+            start: 'top 85%',
+            once: true,
+            onEnter: function () {
+                gsap.to(obj, {
+                    val: target,
+                    duration: 2.2,
+                    ease: 'power2.out',
+                    onUpdate: function () {
+                        el.textContent = Math.round(obj.val).toLocaleString();
+                    }
+                });
+            }
+        });
+    });
+
+    // =========================================================
+    // 8. CTA shine sweep
+    // =========================================================
+    var ctaCard = document.querySelector('.cta .cta-card');
+    if (ctaCard) {
+        var shine = document.createElement('div');
+        shine.style.cssText = 'position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.04),transparent);z-index:5;pointer-events:none;';
+        ctaCard.appendChild(shine);
+
+        ScrollTrigger.create({
+            trigger: '.cta',
+            start: 'top 75%',
+            once: true,
+            onEnter: function () {
+                gsap.to(shine, {
+                    left: '150%',
+                    duration: 1.2,
+                    delay: 0.5,
+                    ease: 'power2.inOut'
+                });
+            }
+        });
+
+        // CTA card entrance — 3D lift
+        gsap.from(ctaCard, {
+            opacity: 0,
+            y: 40,
+            scale: 0.96,
+            rotateX: isDesktop ? 6 : 0,
+            duration: 1.1,
+            ease: 'power3.out',
+            scrollTrigger: { trigger: '.cta', start: 'top 80%' }
+        });
+    }
+
+    // =========================================================
+    // 9. FOOTER stagger reveal — 3D lift
+    // =========================================================
+    gsap.from('.footer-neg .footer-neg__cta', {
+        opacity: 0,
+        y: 30,
+        rotateX: isDesktop ? 5 : 0,
+        duration: 0.9,
+        ease: 'power3.out',
+        scrollTrigger: { trigger: '.footer-neg', start: 'top 85%' }
+    });
+
+    gsap.from('.footer-neg .footer-neg__grid > *', {
+        opacity: 0,
+        y: 25,
+        rotateX: isDesktop ? 4 : 0,
+        stagger: 0.1,
+        duration: 0.7,
+        ease: 'power3.out',
+        scrollTrigger: { trigger: '.footer-neg__grid', start: 'top 90%' }
+    });
+
+    gsap.from('.footer-neg .footer-neg__bottom', {
+        opacity: 0,
+        duration: 0.5,
+        scrollTrigger: { trigger: '.footer-neg__bottom', start: 'top 95%' }
+    });
+
+    // =========================================================
+    // DESKTOP ONLY — smooth mouse-tracking 3D tilt + parallax
+    // =========================================================
+    if (isDesktop) {
+        var tiltCards = document.querySelectorAll('.service-card, .program-card, .why-card, .proof-item, .success-card, .video-card');
+        tiltCards.forEach(function (card) {
+            var intensity = 12;
+
+            card.addEventListener('mousemove', function (e) {
+                var rect = card.getBoundingClientRect();
+                var x = (e.clientX - rect.left) / rect.width;
+                var y = (e.clientY - rect.top) / rect.height;
+                var rotateX = (0.5 - y) * intensity;
+                var rotateY = (x - 0.5) * intensity;
+
+                gsap.to(card, {
+                    rotateX: rotateX,
+                    rotateY: rotateY,
+                    scale: 1.03,
+                    duration: 0.4,
+                    ease: 'power2.out',
+                    overwrite: 'auto'
+                });
+            });
+
+            card.addEventListener('mouseleave', function () {
+                gsap.to(card, {
+                    rotateX: 0,
+                    rotateY: 0,
+                    scale: 1,
+                    duration: 0.7,
+                    ease: 'elastic.out(1, 0.5)',
+                    overwrite: 'auto'
+                });
+            });
+        });
+
+        // Decorative background text parallax
+        gsap.utils.toArray('[class*="bg-type"], [class*="watermark"]').forEach(function (el) {
+            var parent = el.closest('section') || el.parentElement;
+            gsap.to(el, {
+                y: -30,
+                ease: 'none',
+                scrollTrigger: {
+                    trigger: parent,
+                    start: 'top bottom',
+                    end: 'bottom top',
+                    scrub: 2.5
+                }
+            });
+        });
+
+        // Section background text (::before) parallax via per-section wrappers
+        gsap.utils.toArray('.social-proof, .about, .journey, .services, .success, .programs').forEach(function (section) {
+            gsap.to(section, {
+                '--bg-parallax': '-20px',
+                ease: 'none',
+                scrollTrigger: {
+                    trigger: section,
+                    start: 'top bottom',
+                    end: 'bottom top',
+                    scrub: 3
+                }
+            });
+        });
+
+        // Smooth scroll-linked depth shift on cards
+        gsap.utils.toArray('.service-card, .success-card, .program-card').forEach(function (card, i) {
+            var direction = i % 2 === 0 ? 1 : -1;
+            gsap.fromTo(card, {
+                rotateY: direction * 3
+            }, {
+                rotateY: direction * -3,
+                ease: 'none',
+                scrollTrigger: {
+                    trigger: card,
+                    start: 'top bottom',
+                    end: 'bottom top',
+                    scrub: 2
+                }
+            });
+        });
+    }
+
+    // =========================================================
+    // REFRESH on language change
+    // =========================================================
+    document.querySelectorAll('[data-lang]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            setTimeout(function () { ScrollTrigger.refresh(); }, 400);
+        });
+    });
+
+})();

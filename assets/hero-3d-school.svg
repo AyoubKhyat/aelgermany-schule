@@ -1,0 +1,399 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 700" width="800" height="700">
+  <defs>
+    <!-- Sky gradient -->
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e8edf5"/>
+      <stop offset="100%" stop-color="#f5f3ed"/>
+    </linearGradient>
+    <!-- Building facade -->
+    <linearGradient id="facade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f8f7f4"/>
+      <stop offset="50%" stop-color="#f0efeb"/>
+      <stop offset="100%" stop-color="#e4e3de"/>
+    </linearGradient>
+    <!-- Building side (3D depth) -->
+    <linearGradient id="sideface" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#d8d7d2"/>
+      <stop offset="100%" stop-color="#c8c7c2"/>
+    </linearGradient>
+    <!-- Wing facade (slightly darker) -->
+    <linearGradient id="wingfacade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f2f1ed"/>
+      <stop offset="50%" stop-color="#e8e7e3"/>
+      <stop offset="100%" stop-color="#dddcd8"/>
+    </linearGradient>
+    <!-- Window glass -->
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#c8d8ea"/>
+      <stop offset="40%" stop-color="#a8bdd4"/>
+      <stop offset="100%" stop-color="#8fabc4"/>
+    </linearGradient>
+    <!-- Window glass reflection -->
+    <linearGradient id="glassReflect" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.5)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+    </linearGradient>
+    <!-- Door -->
+    <linearGradient id="door" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4a3520"/>
+      <stop offset="100%" stop-color="#2e2010"/>
+    </linearGradient>
+    <!-- Door glass -->
+    <linearGradient id="doorGlass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#b8cce0"/>
+      <stop offset="100%" stop-color="#8aa8c4"/>
+    </linearGradient>
+    <!-- Ground -->
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d4d0c8"/>
+      <stop offset="100%" stop-color="#c8c4bc"/>
+    </linearGradient>
+    <!-- Roof -->
+    <linearGradient id="roof" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4a4a4a"/>
+      <stop offset="100%" stop-color="#333333"/>
+    </linearGradient>
+    <!-- Steps -->
+    <linearGradient id="steps" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e8e6e0"/>
+      <stop offset="100%" stop-color="#d8d6d0"/>
+    </linearGradient>
+    <!-- Tree foliage -->
+    <radialGradient id="tree1" cx="0.4" cy="0.35" r="0.6">
+      <stop offset="0%" stop-color="#5a8a4a"/>
+      <stop offset="70%" stop-color="#3d6b30"/>
+      <stop offset="100%" stop-color="#2d5520"/>
+    </radialGradient>
+    <radialGradient id="tree2" cx="0.4" cy="0.35" r="0.6">
+      <stop offset="0%" stop-color="#4d7a3e"/>
+      <stop offset="70%" stop-color="#376028"/>
+      <stop offset="100%" stop-color="#274a1c"/>
+    </radialGradient>
+    <!-- Sign gradient -->
+    <linearGradient id="signBg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1a1a1a"/>
+      <stop offset="100%" stop-color="#2a2a2a"/>
+    </linearGradient>
+    <!-- Shadow filter -->
+    <filter id="buildingShadow" x="-10%" y="-5%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="12" stdDeviation="20" flood-color="rgba(0,0,0,0.12)"/>
+    </filter>
+    <filter id="softShadow" x="-20%" y="-10%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="rgba(0,0,0,0.08)"/>
+    </filter>
+    <filter id="treeShadow" x="-20%" y="-10%" width="140%" height="130%">
+      <feDropShadow dx="2" dy="4" stdDeviation="3" flood-color="rgba(0,0,0,0.1)"/>
+    </filter>
+    <!-- Flag colors -->
+    <linearGradient id="flagDE" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a1a" stop-opacity="1"/>
+      <stop offset="33.3%" stop-color="#1a1a1a" stop-opacity="1"/>
+      <stop offset="33.3%" stop-color="#dd0000" stop-opacity="1"/>
+      <stop offset="66.6%" stop-color="#dd0000" stop-opacity="1"/>
+      <stop offset="66.6%" stop-color="#ffcc00" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#ffcc00" stop-opacity="1"/>
+    </linearGradient>
+    <!-- Pillar gradient -->
+    <linearGradient id="pillar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#e8e7e2"/>
+      <stop offset="30%" stop-color="#f2f1ed"/>
+      <stop offset="70%" stop-color="#f0efeb"/>
+      <stop offset="100%" stop-color="#dddcd8"/>
+    </linearGradient>
+    <!-- Clock face -->
+    <radialGradient id="clockFace" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#fffff8"/>
+      <stop offset="90%" stop-color="#f5f4f0"/>
+      <stop offset="100%" stop-color="#e0dfda"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="700" fill="url(#sky)" rx="16"/>
+
+  <!-- Ground plane -->
+  <ellipse cx="400" cy="620" rx="380" ry="50" fill="url(#ground)" opacity="0.5"/>
+  <rect x="60" y="590" width="680" height="110" fill="url(#ground)" opacity="0.3" rx="8"/>
+
+  <!-- === MAIN BUILDING GROUP === -->
+  <g filter="url(#buildingShadow)">
+
+    <!-- LEFT WING -->
+    <g>
+      <!-- Wing side face (3D) -->
+      <polygon points="100,230 100,540 70,525 70,245" fill="url(#sideface)" stroke="rgba(0,0,0,0.06)" stroke-width="1"/>
+      <!-- Wing front face -->
+      <rect x="100" y="230" width="180" height="310" fill="url(#wingfacade)" stroke="rgba(0,0,0,0.06)" stroke-width="1"/>
+      <!-- Wing roof -->
+      <rect x="95" y="222" width="190" height="12" fill="url(#roof)" rx="2"/>
+      <rect x="92" y="218" width="196" height="8" fill="#555" rx="1.5"/>
+      <!-- Wing windows - Row 1 -->
+      <rect x="120" y="260" width="42" height="55" rx="3" fill="url(#glass)" stroke="rgba(0,0,0,0.08)" stroke-width="1.5"/>
+      <rect x="120" y="260" width="21" height="27" rx="2" fill="url(#glassReflect)"/>
+      <rect x="172" y="260" width="42" height="55" rx="3" fill="url(#glass)" stroke="rgba(0,0,0,0.08)" stroke-width="1.5"/>
+      <rect x="172" y="260" width="21" height="27" rx="2" fill="url(#glassReflect)"/>
+      <rect x="224" y="260" width="42" height="55" rx="3" fill="url(#glass)" stroke="rgba(0,0,0,0.08)" stroke-width="1.5"/>
+      <rect x="224" y="260" width="21" height="27" rx="2" fill="url(#glassReflect)"/>
+      <!-- Wing windows - Row 2 -->
+      <rect x="120" y="340" width="42" height="55" rx="3" fill="url(#glass)" stroke="rgba(0,0,0,0.08)" stroke-width="1.5"/>
+      <rect x="120" y="340" width="21" height="27" rx="2" fill="url(#glassReflect)"/>
+      <rect x="172" y="340" width="42" height="55" rx="3" fill="url(#glass)" stroke="rgba(0,0,0,0.08)" stroke-width="1.5"/>
+      <rect x="172" y="340" width="21" height="27" rx="2" fill="url(#glassReflect)"/>
+      <rect x="224" y="340" width="42" height="55" rx="3" fill="url(#glass)" stroke="rgba(0,0,0,0.08)" stroke-width="1.5"/>
+      <rect x="224" y="340" width="21" height="27" rx="2" fill="url(#glassReflect)"/>
+      <!-- Wing windows - Row 3 -->
+      <rect x="120" y="420" width="42" height="55" rx="3" fill="url(#glass)" stroke="rgba(0,0,0,0.08)" stroke-width="1.5"/>
+      <rect x="120" y="420" width="21" height="27" rx="2" fill="url(#glassReflect)"/>
+      <rect x="172" y="420" width="42" height="55" rx="3" fill="url(#glass)" stroke="rgba(0,0,0,0.08)" stroke-width="1.5"/>
+      <rect x="172" y="420" width="21" height="27" rx="2" fill="url(#glassReflect)"/>
+      <rect x="224" y="420" width="42" height="55" rx="3" fill="url(#glass)" stroke="rgba(0,0,0,0.08)" stroke-width="1.5"/>
+      <rect x="224" y="420" width="21" height="27" rx="2" fill="url(#glassReflect)"/>
+      <!-- Window dividers (mullions) -->
+      <line x1="141" y1="260" x2="141" y2="315" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+      <line x1="193" y1="260" x2="193" y2="315" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+      <line x1="245" y1="260" x2="245" y2="315" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+      <line x1="141" y1="340" x2="141" y2="395" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+      <line x1="193" y1="340" x2="193" y2="395" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+      <line x1="245" y1="340" x2="245" y2="395" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+      <line x1="141" y1="420" x2="141" y2="475" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+      <line x1="193" y1="420" x2="193" y2="475" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+      <line x1="245" y1="420" x2="245" y2="475" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+      <!-- Floor separator lines -->
+      <line x1="100" y1="330" x2="280" y2="330" stroke="rgba(0,0,0,0.04)" stroke-width="1"/>
+      <line x1="100" y1="410" x2="280" y2="410" stroke="rgba(0,0,0,0.04)" stroke-width="1"/>
+    </g>
+
+    <!-- RIGHT WING -->
+    <g>
+      <!-- Wing side face (3D) -->
+      <polygon points="700,230 700,540 730,525 730,245" fill="url(#sideface)" stroke="rgba(0,0,0,0.06)" stroke-width="1"/>
+      <!-- Wing front face -->
+      <rect x="520" y="230" width="180" height="310" fill="url(#wingfacade)" stroke="rgba(0,0,0,0.06)" stroke-width="1"/>
+      <!-- Wing roof -->
+      <rect x="515" y="222" width="190" height="12" fill="url(#roof)" rx="2"/>
+      <rect x="512" y="218" width="196" height="8" fill="#555" rx="1.5"/>
+      <!-- Wing windows - Row 1 -->
+      <rect x="538" y="260" width="42" height="55" rx="3" fill="url(#glass)" stroke="rgba(0,0,0,0.08)" stroke-width="1.5"/>
+      <rect x="538" y="260" width="21" height="27" rx="2" fill="url(#glassReflect)"/>
+      <rect x="590" y="260" width="42" height="55" rx="3" fill="url(#glass)" stroke="rgba(0,0,0,0.08)" stroke-width="1.5"/>
+      <rect x="590" y="260" width="21" height="27" rx="2" fill="url(#glassReflect)"/>
+      <rect x="642" y="260" width="42" height="55" rx="3" fill="url(#glass)" stroke="rgba(0,0,0,0.08)" stroke-width="1.5"/>
+      <rect x="642" y="260" width="21" height="27" rx="2" fill="url(#glassReflect)"/>
+      <!-- Wing windows - Row 2 -->
+      <rect x="538" y="340" width="42" height="55" rx="3" fill="url(#glass)" stroke="rgba(0,0,0,0.08)" stroke-width="1.5"/>
+      <rect x="538" y="340" width="21" height="27" rx="2" fill="url(#glassReflect)"/>
+      <rect x="590" y="340" width="42" height="55" rx="3" fill="url(#glass)" stroke="rgba(0,0,0,0.08)" stroke-width="1.5"/>
+      <rect x="590" y="340" width="21" height="27" rx="2" fill="url(#glassReflect)"/>
+      <rect x="642" y="340" width="42" height="55" rx="3" fill="url(#glass)" stroke="rgba(0,0,0,0.08)" stroke-width="1.5"/>
+      <rect x="642" y="340" width="21" height="27" rx="2" fill="url(#glassReflect)"/>
+      <!-- Wing windows - Row 3 -->
+      <rect x="538" y="420" width="42" height="55" rx="3" fill="url(#glass)" stroke="rgba(0,0,0,0.08)" stroke-width="1.5"/>
+      <rect x="538" y="420" width="21" height="27" rx="2" fill="url(#glassReflect)"/>
+      <rect x="590" y="420" width="42" height="55" rx="3" fill="url(#glass)" stroke="rgba(0,0,0,0.08)" stroke-width="1.5"/>
+      <rect x="590" y="420" width="21" height="27" rx="2" fill="url(#glassReflect)"/>
+      <rect x="642" y="420" width="42" height="55" rx="3" fill="url(#glass)" stroke="rgba(0,0,0,0.08)" stroke-width="1.5"/>
+      <rect x="642" y="420" width="21" height="27" rx="2" fill="url(#glassReflect)"/>
+      <!-- Window dividers -->
+      <line x1="559" y1="260" x2="559" y2="315" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+      <line x1="611" y1="260" x2="611" y2="315" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+      <line x1="663" y1="260" x2="663" y2="315" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+      <line x1="559" y1="340" x2="559" y2="395" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+      <line x1="611" y1="340" x2="611" y2="395" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+      <line x1="663" y1="340" x2="663" y2="395" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+      <line x1="559" y1="420" x2="559" y2="475" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+      <line x1="611" y1="420" x2="611" y2="475" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+      <line x1="663" y1="420" x2="663" y2="475" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+      <!-- Floor separator lines -->
+      <line x1="520" y1="330" x2="700" y2="330" stroke="rgba(0,0,0,0.04)" stroke-width="1"/>
+      <line x1="520" y1="410" x2="700" y2="410" stroke="rgba(0,0,0,0.04)" stroke-width="1"/>
+    </g>
+
+    <!-- MAIN CENTER BUILDING (taller, in front) -->
+    <g>
+      <!-- Center front face -->
+      <rect x="240" y="140" width="320" height="400" fill="url(#facade)" stroke="rgba(0,0,0,0.07)" stroke-width="1"/>
+
+      <!-- Decorative top pediment / crown -->
+      <polygon points="280,140 400,95 520,140" fill="#f0efeb" stroke="rgba(0,0,0,0.06)" stroke-width="1"/>
+      <polygon points="290,140 400,100 510,140" fill="url(#facade)" stroke="rgba(0,0,0,0.05)" stroke-width="0.5"/>
+      <!-- Pediment inner triangle accent -->
+      <polygon points="340,140 400,115 460,140" fill="none" stroke="rgba(0,0,0,0.06)" stroke-width="1"/>
+
+      <!-- Clock in pediment -->
+      <circle cx="400" cy="125" r="14" fill="url(#clockFace)" stroke="#888" stroke-width="1.5"/>
+      <circle cx="400" cy="125" r="12" fill="none" stroke="rgba(0,0,0,0.06)" stroke-width="0.5"/>
+      <!-- Clock hands -->
+      <line x1="400" y1="125" x2="400" y2="116" stroke="#333" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="400" y1="125" x2="407" y2="122" stroke="#333" stroke-width="1" stroke-linecap="round"/>
+      <circle cx="400" cy="125" r="1.5" fill="#333"/>
+      <!-- Hour markers -->
+      <circle cx="400" cy="114" r="1" fill="#666"/>
+      <circle cx="411" cy="125" r="1" fill="#666"/>
+      <circle cx="400" cy="136" r="1" fill="#666"/>
+      <circle cx="389" cy="125" r="1" fill="#666"/>
+
+      <!-- Main roof / cornice -->
+      <rect x="235" y="134" width="330" height="10" fill="url(#roof)" rx="2"/>
+      <rect x="232" y="131" width="336" height="6" fill="#555" rx="1.5"/>
+
+      <!-- German flag stripe across building -->
+      <rect x="240" y="148" width="320" height="3" fill="#1a1a1a"/>
+      <rect x="240" y="151" width="320" height="3" fill="#dd0000"/>
+      <rect x="240" y="154" width="320" height="3" fill="#ffcc00"/>
+
+      <!-- Floor separator lines -->
+      <line x1="240" y1="250" x2="560" y2="250" stroke="rgba(0,0,0,0.04)" stroke-width="1"/>
+      <line x1="240" y1="350" x2="560" y2="350" stroke="rgba(0,0,0,0.04)" stroke-width="1"/>
+
+      <!-- PILLAR LEFT -->
+      <rect x="265" y="170" width="18" height="370" fill="url(#pillar)" stroke="rgba(0,0,0,0.04)" stroke-width="1" rx="2"/>
+      <rect x="263" y="165" width="22" height="10" fill="#e0dfda" rx="2"/>
+      <!-- PILLAR RIGHT -->
+      <rect x="517" y="170" width="18" height="370" fill="url(#pillar)" stroke="rgba(0,0,0,0.04)" stroke-width="1" rx="2"/>
+      <rect x="515" y="165" width="22" height="10" fill="#e0dfda" rx="2"/>
+
+      <!-- Center windows - Row 1 (top floor) -->
+      <rect x="300" y="180" width="48" height="55" rx="3" fill="url(#glass)" stroke="rgba(0,0,0,0.08)" stroke-width="1.5"/>
+      <rect x="300" y="180" width="24" height="27" rx="2" fill="url(#glassReflect)"/>
+      <line x1="324" y1="180" x2="324" y2="235" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+      <rect x="376" y="180" width="48" height="55" rx="3" fill="url(#glass)" stroke="rgba(0,0,0,0.08)" stroke-width="1.5"/>
+      <rect x="376" y="180" width="24" height="27" rx="2" fill="url(#glassReflect)"/>
+      <line x1="400" y1="180" x2="400" y2="235" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+      <rect x="452" y="180" width="48" height="55" rx="3" fill="url(#glass)" stroke="rgba(0,0,0,0.08)" stroke-width="1.5"/>
+      <rect x="452" y="180" width="24" height="27" rx="2" fill="url(#glassReflect)"/>
+      <line x1="476" y1="180" x2="476" y2="235" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+
+      <!-- Center windows - Row 2 (middle floor) -->
+      <rect x="300" y="270" width="48" height="55" rx="3" fill="url(#glass)" stroke="rgba(0,0,0,0.08)" stroke-width="1.5"/>
+      <rect x="300" y="270" width="24" height="27" rx="2" fill="url(#glassReflect)"/>
+      <line x1="324" y1="270" x2="324" y2="325" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+      <rect x="376" y="270" width="48" height="55" rx="3" fill="url(#glass)" stroke="rgba(0,0,0,0.08)" stroke-width="1.5"/>
+      <rect x="376" y="270" width="24" height="27" rx="2" fill="url(#glassReflect)"/>
+      <line x1="400" y1="270" x2="400" y2="325" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+      <rect x="452" y="270" width="48" height="55" rx="3" fill="url(#glass)" stroke="rgba(0,0,0,0.08)" stroke-width="1.5"/>
+      <rect x="452" y="270" width="24" height="27" rx="2" fill="url(#glassReflect)"/>
+      <line x1="476" y1="270" x2="476" y2="325" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+
+      <!-- Center windows - Row 3 (ground floor, flanking entrance) -->
+      <rect x="260" y="380" width="48" height="60" rx="3" fill="url(#glass)" stroke="rgba(0,0,0,0.08)" stroke-width="1.5"/>
+      <rect x="260" y="380" width="24" height="30" rx="2" fill="url(#glassReflect)"/>
+      <line x1="284" y1="380" x2="284" y2="440" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+      <rect x="320" y="380" width="48" height="60" rx="3" fill="url(#glass)" stroke="rgba(0,0,0,0.08)" stroke-width="1.5"/>
+      <rect x="320" y="380" width="24" height="30" rx="2" fill="url(#glassReflect)"/>
+      <line x1="344" y1="380" x2="344" y2="440" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+      <rect x="432" y="380" width="48" height="60" rx="3" fill="url(#glass)" stroke="rgba(0,0,0,0.08)" stroke-width="1.5"/>
+      <rect x="432" y="380" width="24" height="30" rx="2" fill="url(#glassReflect)"/>
+      <line x1="456" y1="380" x2="456" y2="440" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+      <rect x="492" y="380" width="48" height="60" rx="3" fill="url(#glass)" stroke="rgba(0,0,0,0.08)" stroke-width="1.5"/>
+      <rect x="492" y="380" width="24" height="30" rx="2" fill="url(#glassReflect)"/>
+      <line x1="516" y1="380" x2="516" y2="440" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+
+      <!-- Building sign board -->
+      <rect x="310" y="348" width="180" height="28" rx="4" fill="url(#signBg)"/>
+      <rect x="310" y="348" width="180" height="1" rx="0.5" fill="rgba(255,255,255,0.08)"/>
+      <text x="400" y="367" text-anchor="middle" font-family="'Arial', 'Helvetica', sans-serif" font-weight="700" font-size="11" letter-spacing="2.5" fill="#ffffff">AEL GERMANY SCHULE</text>
+
+      <!-- MAIN ENTRANCE -->
+      <g>
+        <!-- Entrance recess shadow -->
+        <rect x="378" y="445" width="44" height="95" rx="0" fill="rgba(0,0,0,0.06)"/>
+        <!-- Door frame -->
+        <rect x="376" y="440" width="48" height="100" rx="2" fill="url(#door)" stroke="rgba(0,0,0,0.15)" stroke-width="1.5"/>
+        <!-- Door arch top -->
+        <path d="M376,470 L376,455 Q376,440 391,440 L409,440 Q424,440 424,455 L424,470" fill="url(#door)" stroke="rgba(0,0,0,0.1)" stroke-width="1"/>
+        <!-- Door glass panels -->
+        <rect x="380" y="460" width="17" height="70" rx="1.5" fill="url(#doorGlass)" stroke="rgba(0,0,0,0.06)" stroke-width="0.5"/>
+        <rect x="403" y="460" width="17" height="70" rx="1.5" fill="url(#doorGlass)" stroke="rgba(0,0,0,0.06)" stroke-width="0.5"/>
+        <!-- Door handle -->
+        <circle cx="399" cy="500" r="2.5" fill="#d4a800" stroke="rgba(0,0,0,0.1)" stroke-width="0.5"/>
+        <circle cx="401" cy="500" r="2.5" fill="#c49800" stroke="rgba(0,0,0,0.1)" stroke-width="0.5"/>
+        <!-- Door glass reflections -->
+        <rect x="382" y="462" width="6" height="30" rx="1" fill="rgba(255,255,255,0.25)"/>
+        <rect x="405" y="462" width="6" height="30" rx="1" fill="rgba(255,255,255,0.25)"/>
+        <!-- Arch window above door -->
+        <path d="M381,448 Q400,435 419,448" fill="url(#doorGlass)" stroke="rgba(0,0,0,0.08)" stroke-width="0.5"/>
+      </g>
+
+      <!-- Entrance canopy / awning -->
+      <rect x="356" y="435" width="88" height="6" rx="2" fill="#e0dfda" stroke="rgba(0,0,0,0.06)" stroke-width="1"/>
+      <rect x="352" y="432" width="96" height="5" rx="1.5" fill="#d8d7d2"/>
+    </g>
+
+    <!-- Steps in front of entrance -->
+    <rect x="345" y="540" width="110" height="8" rx="2" fill="url(#steps)" stroke="rgba(0,0,0,0.04)" stroke-width="0.5"/>
+    <rect x="338" y="548" width="124" height="8" rx="2" fill="url(#steps)" stroke="rgba(0,0,0,0.04)" stroke-width="0.5"/>
+    <rect x="330" y="556" width="140" height="8" rx="2" fill="url(#steps)" stroke="rgba(0,0,0,0.04)" stroke-width="0.5"/>
+    <rect x="322" y="564" width="156" height="8" rx="2" fill="url(#steps)" stroke="rgba(0,0,0,0.04)" stroke-width="0.5"/>
+
+    <!-- Pathway from steps -->
+    <rect x="360" y="572" width="80" height="48" rx="3" fill="url(#steps)" opacity="0.5"/>
+
+  </g>
+
+  <!-- === LANDSCAPING === -->
+
+  <!-- Left tree -->
+  <g filter="url(#treeShadow)">
+    <rect x="68" y="510" width="10" height="50" rx="3" fill="#5a4030"/>
+    <ellipse cx="73" cy="480" rx="35" ry="42" fill="url(#tree1)"/>
+    <ellipse cx="60" cy="490" rx="22" ry="28" fill="url(#tree2)"/>
+    <ellipse cx="88" cy="485" rx="20" ry="25" fill="url(#tree2)" opacity="0.8"/>
+    <!-- Highlight on foliage -->
+    <ellipse cx="65" cy="470" rx="14" ry="16" fill="rgba(120,180,80,0.3)"/>
+  </g>
+
+  <!-- Right tree -->
+  <g filter="url(#treeShadow)">
+    <rect x="718" y="510" width="10" height="50" rx="3" fill="#5a4030"/>
+    <ellipse cx="723" cy="478" rx="38" ry="45" fill="url(#tree1)"/>
+    <ellipse cx="710" cy="488" rx="24" ry="30" fill="url(#tree2)"/>
+    <ellipse cx="738" cy="483" rx="22" ry="27" fill="url(#tree2)" opacity="0.8"/>
+    <ellipse cx="715" cy="468" rx="15" ry="17" fill="rgba(120,180,80,0.3)"/>
+  </g>
+
+  <!-- Small bushes near entrance -->
+  <ellipse cx="330" cy="565" rx="18" ry="12" fill="#4d7a3e" opacity="0.7"/>
+  <ellipse cx="470" cy="565" rx="18" ry="12" fill="#4d7a3e" opacity="0.7"/>
+  <ellipse cx="325" cy="562" rx="12" ry="8" fill="#5a8a4a" opacity="0.5"/>
+  <ellipse cx="475" cy="562" rx="12" ry="8" fill="#5a8a4a" opacity="0.5"/>
+
+  <!-- === FLAG POLE on roof === -->
+  <g>
+    <line x1="400" y1="60" x2="400" y2="95" stroke="#888" stroke-width="2"/>
+    <circle cx="400" cy="58" r="3" fill="#d4a800"/>
+    <rect x="402" y="62" width="24" height="16" rx="1" fill="url(#flagDE)"/>
+    <!-- Flag wave effect -->
+    <path d="M402,62 Q414,60 426,62 L426,78 Q414,80 402,78 Z" fill="url(#flagDE)" opacity="0.9"/>
+  </g>
+
+  <!-- === DECORATIVE DETAILS === -->
+
+  <!-- Window sills on center building (subtle) -->
+  <rect x="298" y="235" width="52" height="3" rx="1" fill="#e0dfda"/>
+  <rect x="374" y="235" width="52" height="3" rx="1" fill="#e0dfda"/>
+  <rect x="450" y="235" width="52" height="3" rx="1" fill="#e0dfda"/>
+  <rect x="298" y="325" width="52" height="3" rx="1" fill="#e0dfda"/>
+  <rect x="374" y="325" width="52" height="3" rx="1" fill="#e0dfda"/>
+  <rect x="450" y="325" width="52" height="3" rx="1" fill="#e0dfda"/>
+
+  <!-- Subtle light glow from windows at night feel (optional warm light) -->
+  <rect x="302" y="272" width="44" height="51" rx="2" fill="rgba(255,240,200,0.06)"/>
+  <rect x="378" y="272" width="44" height="51" rx="2" fill="rgba(255,240,200,0.06)"/>
+  <rect x="454" y="272" width="44" height="51" rx="2" fill="rgba(255,240,200,0.06)"/>
+
+  <!-- Ground shadow under building -->
+  <ellipse cx="400" cy="580" rx="250" ry="15" fill="rgba(0,0,0,0.06)"/>
+
+  <!-- Decorative lamp posts -->
+  <g opacity="0.6">
+    <!-- Left lamp -->
+    <rect x="198" y="520" width="4" height="35" rx="1" fill="#888"/>
+    <ellipse cx="200" cy="518" rx="8" ry="4" fill="#999"/>
+    <ellipse cx="200" cy="516" rx="5" ry="3" fill="#ffcc00" opacity="0.4"/>
+    <!-- Right lamp -->
+    <rect x="598" y="520" width="4" height="35" rx="1" fill="#888"/>
+    <ellipse cx="600" cy="518" rx="8" ry="4" fill="#999"/>
+    <ellipse cx="600" cy="516" rx="5" ry="3" fill="#ffcc00" opacity="0.4"/>
+  </g>
+
+</svg>
