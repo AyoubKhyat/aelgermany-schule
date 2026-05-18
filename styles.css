@@ -178,7 +178,7 @@ a {
     transition: var(--transition);
 }
 
-img {
+img, video, iframe {
     max-width: 100%;
     display: block;
 }
@@ -802,8 +802,9 @@ html[dir="ltr"] .hero-ed__title-germany::after {
 
 .hero-ed__stat > div {
     display: flex;
-    flex-direction: column;
-    gap: 2px;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0;
 }
 
 .hero-ed__stat strong {
@@ -819,6 +820,7 @@ html[dir="ltr"] .hero-ed__title-germany::after {
     font-size: 1.3rem;
     font-weight: 800;
     color: var(--gold-dark);
+    margin-inline-start: 2px;
 }
 
 [data-theme="dark"] .hero-ed__stat span { color: var(--gold); }
@@ -828,6 +830,8 @@ html[dir="ltr"] .hero-ed__title-germany::after {
     color: rgba(0,0,0,0.45);
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    width: 100%;
+    margin-top: 2px;
 }
 
 [data-theme="dark"] .hero-ed__stat small { color: rgba(255,255,255,0.4); }
@@ -1274,9 +1278,15 @@ html[dir="rtl"] .hero-ed__anno--whatsapp {
     .hero-ed__stats {
         justify-content: center;
         flex-wrap: wrap;
-        gap: 12px;
+        gap: 16px 24px;
         width: 100%;
         margin-bottom: 0;
+        border-top: none;
+        padding-top: 20px;
+    }
+
+    .hero-ed__stat-div {
+        display: none;
     }
 
     /* Building visual */
@@ -1338,7 +1348,11 @@ html[dir="rtl"] .hero-ed__anno--whatsapp {
 /* --- Hero responsive: Small mobile --- */
 @media (max-width: 480px) {
     .hero-ed {
-        padding: 88px 0 40px;
+        padding: 76px 0 32px;
+    }
+
+    body.has-urgency-banner .hero-ed {
+        padding-top: 116px;
     }
 
     .hero-ed__left {
@@ -1352,13 +1366,13 @@ html[dir="rtl"] .hero-ed__anno--whatsapp {
     }
 
     .hero-ed__title {
-        font-size: clamp(1.8rem, 9vw, 2.2rem);
+        font-size: clamp(1.6rem, 8vw, 2.2rem);
     }
 
     .hero-ed__title-germany { font-size: 1.1em; }
 
     .hero-ed__sub {
-        font-size: 0.92rem;
+        font-size: 0.88rem;
         margin-top: 12px;
         margin-bottom: 20px;
     }
@@ -1372,9 +1386,11 @@ html[dir="rtl"] .hero-ed__anno--whatsapp {
     .hero-ed__actions .hero-ed__btn {
         width: 100%;
         flex: none;
+        padding: 11px 14px;
+        font-size: 0.84rem;
     }
 
-    .hero-ed__stats { gap: 10px; }
+    .hero-ed__stats { gap: 10px 16px; }
     .hero-ed__stat-icon { width: 30px; height: 30px; }
 
     .hero-ed__visual { margin-top: 24px; }
@@ -2995,8 +3011,10 @@ html[dir="rtl"] .hero-ed__anno--whatsapp {
     }
 
     .nav-links a {
-        display: block;
-        padding: 14px 0;
+        display: flex;
+        align-items: center;
+        padding: 16px 0;
+        min-height: 44px;
         border-bottom: 1px solid var(--mobile-nav-border);
         color: var(--text) !important;
         font-size: 1rem;
@@ -3660,14 +3678,16 @@ html[dir="ltr"] .why-number {
 /* Theme toggle & lang switcher responsive */
 @media (max-width: 768px) {
     .theme-toggle {
-        width: 34px;
-        height: 34px;
+        width: 40px;
+        height: 40px;
+        min-width: 44px;
+        min-height: 44px;
         margin-inline-start: auto;
     }
 
     .theme-toggle svg {
-        width: 16px;
-        height: 16px;
+        width: 18px;
+        height: 18px;
     }
 
     .lang-switcher {
@@ -4137,7 +4157,12 @@ html[dir="ltr"] .why-number {
     opacity: 0.7;
     transition: var(--transition);
     line-height: 1;
-    padding: 0 4px;
+    padding: 8px;
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .urgency-close:hover {
@@ -5247,6 +5272,9 @@ html[dir="ltr"] .video-duration {
     unicode-bidi: isolate;
     position: relative;
     z-index: 2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 html[dir="ltr"] .mcta-label {
@@ -5572,7 +5600,7 @@ html[dir="rtl"] .mcta-label {
 
     /* Body offset on mobile */
     body {
-        padding-bottom: 90px;
+        padding-bottom: 80px;
     }
 
     /* Hide floating WhatsApp on mobile */
@@ -5584,18 +5612,18 @@ html[dir="rtl"] .mcta-label {
 /* --- Small mobile (max-width: 480px) --- */
 @media (max-width: 480px) {
     .urgency-inner {
-        font-size: 0.72rem;
-        gap: 6px;
+        font-size: 0.8rem;
+        gap: 8px;
     }
 
     .urgency-countdown {
-        padding: 1px 8px;
-        font-size: 0.72rem;
+        padding: 2px 10px;
+        font-size: 0.78rem;
     }
 
     .urgency-btn {
-        padding: 3px 10px;
-        font-size: 0.7rem;
+        padding: 5px 12px;
+        font-size: 0.75rem;
     }
 
     .hero-trust {
@@ -5640,6 +5668,43 @@ html[dir="rtl"] .mcta-label {
     .form-group input,
     .form-group select {
         padding: 10px 14px;
+    }
+
+    .mobile-sticky-cta {
+        gap: 5px;
+        padding: 5px;
+        border-radius: 22px;
+        height: 58px;
+    }
+
+    .programs-timeline {
+        padding-right: 32px;
+    }
+
+    .timeline-line {
+        right: 8px;
+    }
+}
+
+/* --- Ultra-small mobile (max-width: 320px) --- */
+@media (max-width: 320px) {
+    .container {
+        padding: 0 12px;
+    }
+
+    .hero-ed__title {
+        font-size: 1.5rem;
+    }
+
+    .mobile-sticky-cta {
+        grid-template-columns: 1fr 1fr;
+        height: auto;
+        left: 8px;
+        right: 8px;
+    }
+
+    .insta-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
