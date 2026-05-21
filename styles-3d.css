@@ -1,6 +1,6 @@
 /* ============================================================
    STYLES-3D.CSS — Premium 3D Override Layer
-   AEL Germany Schule
+   Alfa Haus Goethe
    Part 1: Social Proof, About, Journey, Services, Success, Programs
    ============================================================
    Loaded AFTER styles.css to transform flat sections into
@@ -202,9 +202,9 @@ section.about {
   overflow: hidden;
 }
 
-/* Giant background word "AEL" */
+/* Giant background word */
 section.about::before {
-  content: "AEL";
+  content: "ALFA";
   position: absolute;
   top: 50%;
   left: 50%;
@@ -647,7 +647,7 @@ section.journey .journey-step:hover .step-content-final {
 
 section.services {
   position: relative;
-  background: var(--cream);
+  background: var(--surface-secondary, var(--cream));
   perspective: var(--perspective);
   overflow: hidden;
 }
@@ -680,21 +680,19 @@ section.services .services-grid {
 
 section.services .service-card {
   position: relative;
-  background: var(--glass);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid var(--glass-border);
+  background: var(--card-bg, #ffffff);
+  border: 1px solid var(--gray-200, rgba(0,0,0,0.08));
   border-radius: var(--radius-lg);
-  padding: 2.5rem 2rem 2rem;
+  padding: 32px 28px;
   transform: rotateX(2deg) rotateY(0deg) translateZ(0);
   transform-style: preserve-3d;
-  box-shadow: var(--shadow-3d);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
   transition: transform 0.6s var(--transition-smooth),
               box-shadow 0.6s var(--transition-smooth);
   overflow: hidden;
 }
 
-/* Red/gold glow line at top */
+/* Red top accent line */
 section.services .service-card::before {
   content: "";
   position: absolute;
@@ -702,14 +700,15 @@ section.services .service-card::before {
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, var(--red), var(--gold), var(--red));
-  opacity: 0.7;
-  transition: opacity 0.4s ease, height 0.4s ease;
+  background: var(--red);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+  z-index: 1;
 }
 
 section.services .service-card:hover::before {
-  opacity: 1;
-  height: 4px;
+  transform: scaleX(1);
 }
 
 /* Alternate card tilts */
@@ -726,53 +725,53 @@ section.services .service-card:nth-child(3) {
 }
 
 section.services .service-card:hover {
-  transform: rotateX(0deg) rotateY(0deg) translateZ(25px) translateY(-8px) scale(1.02);
-  box-shadow: var(--shadow-3d-deep);
+  transform: rotateX(0deg) rotateY(0deg) translateZ(15px) translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+  border-color: transparent;
 }
 
-/* 3D sphere icon */
+/* Red square icon */
 section.services .service-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  background: linear-gradient(145deg, var(--red), #aa0000);
-  box-shadow: 0 10px 28px var(--red-glow),
-              inset 0 -4px 8px rgba(0, 0, 0, 0.25),
-              inset 0 4px 8px rgba(255, 255, 255, 0.2);
-  margin-bottom: 1.5rem;
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: var(--red);
+  margin-bottom: 20px;
   transform: translateZ(25px);
   transition: transform 0.5s var(--transition-smooth),
-              box-shadow 0.5s ease;
+              border-radius 0.4s ease,
+              background 0.4s ease;
+  position: relative;
+  z-index: 1;
 }
 
 section.services .service-card:hover .service-icon {
-  transform: translateZ(40px) scale(1.08) rotateY(10deg);
-  box-shadow: 0 14px 36px var(--red-glow),
-              inset 0 -4px 8px rgba(0, 0, 0, 0.25),
-              inset 0 4px 8px rgba(255, 255, 255, 0.3);
+  transform: translateZ(30px) scale(1.05);
+  border-radius: 16px;
+  background: #b30000;
 }
 
 section.services .service-icon svg {
-  width: 28px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
   color: #ffffff;
-  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.2));
 }
 
 section.services .service-card h3 {
   font-weight: 700;
-  font-size: 1.2rem;
-  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
   transform: translateZ(10px);
+  color: var(--text);
 }
 
 section.services .service-card p {
-  opacity: 0.8;
-  line-height: 1.75;
-  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  font-size: 0.88rem;
   transform: translateZ(5px);
 }
 
@@ -791,28 +790,13 @@ section.services .service-tag {
 }
 
 section.services .service-card:hover .service-tag {
-  background: linear-gradient(135deg, rgba(221, 0, 0, 0.12), rgba(255, 204, 0, 0.12));
   transform: translateZ(15px);
 }
 
-/* Dark mode: Services */
-[data-theme="dark"] section.services {
-  background: var(--cream);
-}
-
-[data-theme="dark"] section.services .service-card {
-  background: var(--glass);
-  border-color: var(--glass-border);
-}
-
-[data-theme="dark"] section.services .service-tag {
-  background: linear-gradient(135deg, rgba(221, 0, 0, 0.15), rgba(255, 204, 0, 0.1));
-  border-color: rgba(221, 0, 0, 0.25);
-  color: #ff6666;
-}
-
-[data-theme="dark"] section.services .service-card h3 {
-  color: #f0f0f0;
+section.services .service-tag {
+  color: var(--red);
+  background: rgba(221,0,0,0.08);
+  border-color: rgba(221,0,0,0.15);
 }
 
 
@@ -3399,8 +3383,12 @@ section.about .about-grid,
     will-change: transform;
 }
 
+/* No inner glow on service cards */
+section.services .service-card::after {
+    display: none;
+}
+
 /* Subtle inner glow on glass cards */
-.service-card::after,
 .success-card::after,
 .why-card::after {
     content: "";
@@ -3416,7 +3404,6 @@ section.about .about-grid,
     z-index: 0;
 }
 
-[data-theme="dark"] .service-card::after,
 [data-theme="dark"] .success-card::after,
 [data-theme="dark"] .why-card::after {
     background: radial-gradient(

@@ -1,5 +1,5 @@
 /* ============================================
-   AEL Germany Schule — i18n Translation System
+   Alfa Haus Goethe — i18n Translation System
    Languages: Arabic (ar), French (fr), English (en)
    ============================================ */
 
@@ -14,7 +14,7 @@ var I18N = (function () {
             "nav.about": "من نحن",
             "nav.services": "خدماتنا",
             "nav.programs": "البرامج",
-            "nav.branch": "فرع مراكش",
+            "nav.branch": "فرع المحمدية",
             "nav.whyUs": "لماذا نحن",
             "nav.contact": "تواصل معنا",
 
@@ -23,7 +23,7 @@ var I18N = (function () {
             "hero.badge.seats": "الأماكن محدودة",
             "hero.title.line1": "مستقبلك يبدأ",
             "hero.title.line2": "من هنا نحو <span class='title-germany'>ألمانيا</span>",
-            "hero.subtitle": "معهد متخصص في تعليم اللغة الألمانية والتوجيه نحو الدراسة والتكوين المهني بألمانيا — من مراكش إلى ألمانيا، نرافقك في كل خطوة.",
+            "hero.subtitle": "معهد متخصص في تعليم اللغة الألمانية والتوجيه نحو الدراسة والتكوين المهني بألمانيا — من المحمدية إلى ألمانيا، نرافقك في كل خطوة.",
             "hero.cta.whatsapp": "سجّل الآن عبر واتساب",
             "hero.cta.discover": "احجز مقعدك المجاني",
             "hero.urgency": "الأماكن محدودة لدورة سبتمبر 2026 — سجل قبل فوات الأوان",
@@ -37,8 +37,8 @@ var I18N = (function () {
             "hero.anno.courses": "دورات اللغة الألمانية",
             "hero.anno.courses.desc": "جميع المستويات ببرامج معتمدة",
             "hero.anno.branch": "فرعنا",
-            "hero.anno.branch.city": "مراكش",
-            "hero.anno.branch.desc": "معهدك المحلي في مراكش",
+            "hero.anno.branch.city": "المحمدية",
+            "hero.anno.branch.desc": "معهدك المحلي في المحمدية",
             "hero.anno.ausbild": "التوجيه المهني",
             "hero.anno.ausbild.desc": "مسارات التكوين المهني بألمانيا",
             "hero.anno.visa": "تحضير الفيزا",
@@ -50,7 +50,7 @@ var I18N = (function () {
 
             // Social Proof
             "proof.instagram": "متابع على إنستغرام",
-            "proof.branches": "فروع في المغرب",
+            "proof.branches": "موقع في المحمدية",
             "proof.focus": "تركيز على ألمانيا",
             "proof.guided": "طالب تم توجيهه",
 
@@ -58,7 +58,7 @@ var I18N = (function () {
             "about.tag": "من نحن",
             "about.title": "بوابتك نحو مستقبل في ألمانيا",
             "about.desc": "معهد رائد في تعليم اللغة الألمانية والتوجيه المهني",
-            "about.lead": "<strong>AEL Germany Schule</strong> هو معهد متخصص في تعليم اللغة الألمانية وتوجيه الطلاب والمهنيين نحو فرص الدراسة والعمل والتكوين المهني في ألمانيا.",
+            "about.lead": "<strong>Alfa Haus Goethe</strong> هو معهد متخصص في تعليم اللغة الألمانية وتوجيه الطلاب والمهنيين نحو فرص الدراسة والعمل والتكوين المهني في ألمانيا.",
             "about.p1": "نقدم برامج تعليمية شاملة تغطي جميع المستويات من A1 إلى B2، مع توجيه أكاديمي ومهني متخصص يساعد طلابنا على تحقيق أهدافهم بنجاح.",
             "about.p2": "بفضل فريق من الأساتذة المؤهلين وبرامج تعليمية حديثة، نضمن لطلابنا تجربة تعليمية احترافية ومتكاملة.",
             "about.badge": "خريج ناجح",
@@ -126,20 +126,20 @@ var I18N = (function () {
             "why.w2.text": "فريق متخصص يرافقك في كل خطوة من رحلتك.",
             "why.w3.title": "برامج موجهة لألمانيا",
             "why.w3.text": "محتوى تعليمي مصمم خصيصاً لتلبية متطلبات المؤسسات الألمانية.",
-            "why.w4.title": "فروع متعددة",
-            "why.w4.text": "تواجد في عدة مدن مغربية لتقريب الخدمة من الطلاب.",
+            "why.w4.title": "موقع استراتيجي",
+            "why.w4.text": "موقع مميز في المحمدية لسهولة الوصول.",
             "why.w5.title": "متابعة شخصية",
             "why.w5.text": "متابعة فردية لكل طالب لضمان التقدم المستمر.",
             "why.w6.title": "منهج مناسب للمبتدئين",
             "why.w6.text": "بيئة تعليمية محفزة ومريحة حتى لمن ليست لديه أي خلفية سابقة.",
 
             // Branch
-            "branch.tag": "فرع مراكش",
-            "branch.title": "فرعنا الجديد في مراكش",
+            "branch.tag": "فرع المحمدية",
+            "branch.title": "فرعنا في المحمدية",
             "branch.desc": "قريبون منكم لخدمتكم بشكل أفضل",
             "branch.new": "جديد",
             "branch.address.label": "العنوان",
-            "branch.address.value": "حي بن تاشفين، عمارة رقم 124، الطابق الثالث، أمام مؤسسة الخالد 1 الخصوصية، حي أزلي، مراكش",
+            "branch.address.value": "زنقة الصفي، زاوية شارع عبد الرحمن السرغيني، عمارة إبراهيم الثانية، الطابق 3، شقة 14، المحمدية",
             "branch.phone.label": "الهاتف",
             "branch.hours.label": "أوقات العمل",
             "branch.hours.value": "الإثنين - السبت: 9:00 - 19:00",
@@ -156,7 +156,7 @@ var I18N = (function () {
             // Footer
             "footer.about": "معهد متخصص في تعليم اللغة الألمانية والتوجيه نحو الدراسة والتكوين المهني بألمانيا.",
             "footer.quickLinks": "روابط سريعة",
-            "footer.copyright": "&copy; 2026 AEL Germany Schule. جميع الحقوق محفوظة.",
+            "footer.copyright": "&copy; 2026 Alfa Haus Goethe. جميع الحقوق محفوظة.",
 
             // Nav
             "nav.faq": "الأسئلة",
@@ -170,7 +170,7 @@ var I18N = (function () {
 
             // Journey
             "journey.tag": "رحلتك نحو ألمانيا",
-            "journey.title": "من مراكش إلى ألمانيا في 6 خطوات",
+            "journey.title": "من المحمدية إلى ألمانيا في 6 خطوات",
             "journey.desc": "مسار واضح نرافقك فيه من أول خطوة حتى الوصول",
             "journey.s1.title": "التسجيل والتقييم",
             "journey.s1.text": "تسجل معنا ونحدد مستواك الحالي ونضع خطة تعليمية مخصصة لك.",
@@ -189,14 +189,14 @@ var I18N = (function () {
             // Success Stories
             "success.tag": "قصص نجاح",
             "success.title": "طلابنا في ألمانيا الآن",
-            "success.desc": "قصص حقيقية لطلاب غيّرت حياتهم مع AEL",
-            "success.t1.text": "بفضل AEL Germany Schule، حصلت على B1 في 8 أشهر فقط وأنا الآن أدرس التمريض في ميونخ. الأساتذة كانوا ممتازين والدعم لم يتوقف حتى بعد وصولي لألمانيا.",
+            "success.desc": "قصص حقيقية لطلاب غيّرت حياتهم مع Alfa Haus Goethe",
+            "success.t1.text": "بفضل Alfa Haus Goethe، حصلت على B1 في 8 أشهر فقط وأنا الآن أدرس التمريض في ميونخ. الأساتذة كانوا ممتازين والدعم لم يتوقف حتى بعد وصولي لألمانيا.",
             "success.t1.name": "ياسمين — ميونخ",
             "success.t1.role": "طالبة تمريض — Ausbildung",
-            "success.t2.text": "كنت خائفاً من البداية لكن الفريق في AEL ساعدني خطوة بخطوة. من الصفر إلى B1 ثم Ausbildung في هامبورغ. أفضل قرار أخذته في حياتي.",
+            "success.t2.text": "كنت خائفاً من البداية لكن الفريق في Alfa Haus Goethe ساعدني خطوة بخطوة. من الصفر إلى B1 ثم Ausbildung في هامبورغ. أفضل قرار أخذته في حياتي.",
             "success.t2.name": "أيوب — هامبورغ",
             "success.t2.role": "تكوين مهني — Mechatroniker",
-            "success.t3.text": "AEL ليست مجرد معهد لغة، بل هي عائلة ترافقك في كل خطوة. التوجيه المهني والمساعدة في الفيزا كانا ممتازين. أنا الآن في برلين وسعيد جداً.",
+            "success.t3.text": "Alfa Haus Goethe ليست مجرد معهد لغة، بل هي عائلة ترافقك في كل خطوة. التوجيه المهني والمساعدة في الفيزا كانا ممتازين. أنا الآن في برلين وسعيد جداً.",
             "success.t3.name": "سارة — برلين",
             "success.t3.role": "طالبة جامعية — Informatik",
 
@@ -204,12 +204,9 @@ var I18N = (function () {
             "videos.tag": "شهادات بالفيديو",
             "videos.title": "اسمع من طلابنا مباشرة",
             "videos.desc": "تجارب حقيقية يرويها أصحابها",
-            "videos.v1.name": "ياسمين — ميونخ",
-            "videos.v1.desc": "من مراكش إلى Ausbildung في ألمانيا",
-            "videos.v2.name": "أيوب — هامبورغ",
-            "videos.v2.desc": "رحلتي من الصفر إلى B1 في 8 أشهر",
-            "videos.v3.name": "سارة — برلين",
-            "videos.v3.desc": "كيف ساعدني AEL في القبول الجامعي",
+            "videos.featured.title": "شاهد تجارب طلابنا على فيسبوك",
+            "videos.featured.desc": "فيديوهات حقيقية من رحلات طلابنا نحو ألمانيا",
+            "videos.cta.fb": "شاهد المزيد على فيسبوك",
 
             // Lead Form
             "form.tag": "استشارة مجانية",
@@ -223,6 +220,10 @@ var I18N = (function () {
             "form.phone": "رقم الهاتف (واتساب)",
             "form.city": "المدينة",
             "form.cityPlaceholder": "اختر المدينة",
+            "form.city.mohammedia": "المحمدية",
+            "form.city.casablanca": "الدار البيضاء",
+            "form.city.rabat": "الرباط",
+            "form.city.other": "مدينة أخرى",
             "form.goal": "هدفك",
             "form.goalPlaceholder": "ما هو هدفك؟",
             "form.goalAusbildung": "التكوين المهني — Ausbildung",
@@ -262,7 +263,7 @@ var I18N = (function () {
             // Instagram
             "insta.title": "تابعنا على إنستغرام",
             "insta.desc": "آخر الأخبار والفعاليات والنصائح",
-            "insta.btn": "@aelgermanyschule — 10K+ متابع",
+            "insta.btn": "@alfa.hausgoethe — 10K+ متابع",
 
             // Hero Annotation Pins
             "hero.pin.courses": "دورات A1–B2",
@@ -271,7 +272,7 @@ var I18N = (function () {
             "hero.pin.ausbildung.sub": "تكوين مهني بألمانيا",
             "hero.pin.visa": "تحضير الفيزا",
             "hero.pin.visa.sub": "مقابلة + ملف كامل",
-            "hero.pin.branch": "فرع مراكش",
+            "hero.pin.branch": "فرع المحمدية",
             "hero.pin.branch.sub": "سجل عبر واتساب",
             "hero.ed.wa": "تسجيل واتساب",
 
@@ -300,7 +301,7 @@ var I18N = (function () {
             "nav.about": "À propos",
             "nav.services": "Services",
             "nav.programs": "Programmes",
-            "nav.branch": "Branche Marrakech",
+            "nav.branch": "Branche Mohammedia",
             "nav.whyUs": "Pourquoi nous",
             "nav.contact": "Contact",
 
@@ -308,7 +309,7 @@ var I18N = (function () {
             "hero.badge.seats": "Places limitées",
             "hero.title.line1": "Votre avenir commence",
             "hero.title.line2": "ici vers <span class='title-germany'>l'Allemagne</span>",
-            "hero.subtitle": "Institut spécialisé dans l'enseignement de l'allemand et l'orientation vers les études et la formation professionnelle en Allemagne — de Marrakech à l'Allemagne, nous vous accompagnons à chaque étape.",
+            "hero.subtitle": "Institut spécialisé dans l'enseignement de l'allemand et l'orientation vers les études et la formation professionnelle en Allemagne — de Mohammedia à l'Allemagne, nous vous accompagnons à chaque étape.",
             "hero.cta.whatsapp": "Inscrivez-vous via WhatsApp",
             "hero.cta.discover": "Réservez votre place",
             "hero.urgency": "Places limitées pour la session de Septembre 2026 — inscrivez-vous avant qu'il ne soit trop tard",
@@ -322,8 +323,8 @@ var I18N = (function () {
             "hero.anno.courses": "Cours d'allemand",
             "hero.anno.courses.desc": "Tous niveaux, programmes certifiés",
             "hero.anno.branch": "Notre branche",
-            "hero.anno.branch.city": "Marrakech",
-            "hero.anno.branch.desc": "Votre institut local à Marrakech",
+            "hero.anno.branch.city": "Mohammedia",
+            "hero.anno.branch.desc": "Votre institut local à Mohammedia",
             "hero.anno.ausbild": "Orientation professionnelle",
             "hero.anno.ausbild.desc": "Parcours de formation en Allemagne",
             "hero.anno.visa": "Préparation visa",
@@ -334,14 +335,14 @@ var I18N = (function () {
             "hero.anno.alllevels": "Tous les niveaux",
 
             "proof.instagram": "Followers Instagram",
-            "proof.branches": "Branches au Maroc",
+            "proof.branches": "Emplacement à Mohammedia",
             "proof.focus": "Focus Allemagne",
             "proof.guided": "Étudiants orientés",
 
             "about.tag": "À propos",
             "about.title": "Votre passerelle vers un avenir en Allemagne",
-            "about.desc": "Institut leader en enseignement de l'allemand et orientation professionnelle",
-            "about.lead": "<strong>AEL Germany Schule</strong> est un institut spécialisé dans l'enseignement de la langue allemande et l'orientation des étudiants et professionnels vers les opportunités d'études, de travail et de formation professionnelle en Allemagne.",
+            "about.desc": "Votre passerelle vers l'Allemagne",
+            "about.lead": "<strong>Alfa Haus Goethe</strong> est un institut spécialisé dans l'enseignement de la langue allemande et l'orientation des étudiants et professionnels vers les opportunités d'études, de travail et de formation professionnelle en Allemagne.",
             "about.p1": "Nous proposons des programmes éducatifs complets couvrant tous les niveaux de A1 à B2, avec un accompagnement académique et professionnel spécialisé qui aide nos étudiants à atteindre leurs objectifs avec succès.",
             "about.p2": "Grâce à une équipe d'enseignants qualifiés et des programmes éducatifs modernes, nous garantissons à nos étudiants une expérience éducative professionnelle et intégrée.",
             "about.badge": "Diplômé avec succès",
@@ -406,19 +407,19 @@ var I18N = (function () {
             "why.w2.text": "Une équipe spécialisée vous accompagne à chaque étape de votre parcours.",
             "why.w3.title": "Programmes orientés Allemagne",
             "why.w3.text": "Contenu éducatif conçu spécifiquement pour répondre aux exigences des institutions allemandes.",
-            "why.w4.title": "Plusieurs branches",
-            "why.w4.text": "Présence dans plusieurs villes marocaines pour rapprocher le service des étudiants.",
+            "why.w4.title": "Emplacement stratégique",
+            "why.w4.text": "Un emplacement privilégié à Mohammedia pour un accès facile.",
             "why.w5.title": "Suivi personnalisé",
             "why.w5.text": "Un suivi individuel pour chaque étudiant afin d'assurer une progression continue.",
             "why.w6.title": "Approche adaptée aux débutants",
             "why.w6.text": "Un environnement éducatif motivant et confortable, même pour ceux sans aucune expérience préalable.",
 
-            "branch.tag": "Branche Marrakech",
-            "branch.title": "Notre nouvelle branche à Marrakech",
+            "branch.tag": "Branche Mohammedia",
+            "branch.title": "Notre branche à Mohammedia",
             "branch.desc": "Proches de vous pour mieux vous servir",
             "branch.new": "Nouveau",
             "branch.address.label": "Adresse",
-            "branch.address.value": "Hay Ben Tachfine, Immeuble n°124, 3ème étage, en face de l'école privée Al Khalid 1, Hay Azli, Marrakech",
+            "branch.address.value": "Angle Bd Abderrahmane Serghni et Rue Safi, Immeuble Ibrahim II, Étage 3, Appartement 14, Mohammedia",
             "branch.phone.label": "Téléphone",
             "branch.hours.label": "Horaires",
             "branch.hours.value": "Lundi - Samedi : 9h00 - 19h00",
@@ -433,7 +434,7 @@ var I18N = (function () {
 
             "footer.about": "Institut spécialisé dans l'enseignement de l'allemand et l'orientation vers les études et la formation professionnelle en Allemagne.",
             "footer.quickLinks": "Liens rapides",
-            "footer.copyright": "&copy; 2026 AEL Germany Schule. Tous droits réservés.",
+            "footer.copyright": "&copy; 2026 Alfa Haus Goethe. Tous droits réservés.",
 
             "nav.faq": "FAQ",
 
@@ -443,7 +444,7 @@ var I18N = (function () {
             "hero.trust": "+51 étudiants inscrits ce mois-ci",
 
             "journey.tag": "Votre parcours",
-            "journey.title": "De Marrakech à l'Allemagne en 6 étapes",
+            "journey.title": "De Mohammedia à l'Allemagne en 6 étapes",
             "journey.desc": "Un parcours clair où nous vous accompagnons de la première étape jusqu'à l'arrivée",
             "journey.s1.title": "Inscription et évaluation",
             "journey.s1.text": "Inscrivez-vous et nous évaluerons votre niveau actuel pour établir un plan d'apprentissage personnalisé.",
@@ -461,26 +462,23 @@ var I18N = (function () {
 
             "success.tag": "Histoires de réussite",
             "success.title": "Nos étudiants sont en Allemagne",
-            "success.desc": "Des histoires vraies d'étudiants dont la vie a changé avec AEL",
-            "success.t1.text": "Grâce à AEL Germany Schule, j'ai obtenu mon B1 en seulement 8 mois et j'étudie maintenant les soins infirmiers à Munich. Les professeurs étaient excellents et le soutien n'a pas cessé même après mon arrivée en Allemagne.",
+            "success.desc": "Des histoires vraies d'étudiants dont la vie a changé avec Alfa Haus Goethe",
+            "success.t1.text": "Grâce à Alfa Haus Goethe, j'ai obtenu mon B1 en seulement 8 mois et j'étudie maintenant les soins infirmiers à Munich. Les professeurs étaient excellents et le soutien n'a pas cessé même après mon arrivée en Allemagne.",
             "success.t1.name": "Yasmine — Munich",
             "success.t1.role": "Étudiante en soins infirmiers — Ausbildung",
-            "success.t2.text": "J'avais peur de commencer mais l'équipe d'AEL m'a aidé pas à pas. De zéro à B1 puis Ausbildung à Hambourg. La meilleure décision de ma vie.",
+            "success.t2.text": "J'avais peur de commencer mais l'équipe d'Alfa Haus Goethe m'a aidé pas à pas. De zéro à B1 puis Ausbildung à Hambourg. La meilleure décision de ma vie.",
             "success.t2.name": "Ayoub — Hambourg",
             "success.t2.role": "Formation professionnelle — Mechatroniker",
-            "success.t3.text": "AEL n'est pas qu'un institut de langues, c'est une famille qui vous accompagne à chaque étape. L'orientation professionnelle et l'aide au visa étaient excellentes. Je suis maintenant à Berlin et très heureux.",
+            "success.t3.text": "Alfa Haus Goethe n'est pas qu'un institut de langues, c'est une famille qui vous accompagne à chaque étape. L'orientation professionnelle et l'aide au visa étaient excellentes. Je suis maintenant à Berlin et très heureux.",
             "success.t3.name": "Sara — Berlin",
             "success.t3.role": "Étudiante universitaire — Informatik",
 
             "videos.tag": "Témoignages vidéo",
             "videos.title": "Écoutez nos étudiants directement",
             "videos.desc": "Des expériences réelles racontées par leurs auteurs",
-            "videos.v1.name": "Yasmine — Munich",
-            "videos.v1.desc": "De Marrakech à l'Ausbildung en Allemagne",
-            "videos.v2.name": "Ayoub — Hambourg",
-            "videos.v2.desc": "Mon parcours de zéro à B1 en 8 mois",
-            "videos.v3.name": "Sara — Berlin",
-            "videos.v3.desc": "Comment AEL m'a aidée pour l'admission universitaire",
+            "videos.featured.title": "Découvrez les expériences de nos étudiants sur Facebook",
+            "videos.featured.desc": "Vidéos authentiques des parcours de nos étudiants vers l'Allemagne",
+            "videos.cta.fb": "Voir plus sur Facebook",
 
             "form.tag": "Consultation gratuite",
             "form.title": "Réservez une séance d'orientation gratuite",
@@ -493,6 +491,10 @@ var I18N = (function () {
             "form.phone": "Numéro de téléphone (WhatsApp)",
             "form.city": "Ville",
             "form.cityPlaceholder": "Choisir la ville",
+            "form.city.mohammedia": "Mohammedia",
+            "form.city.casablanca": "Casablanca",
+            "form.city.rabat": "Rabat",
+            "form.city.other": "Autre ville",
             "form.goal": "Votre objectif",
             "form.goalPlaceholder": "Quel est votre objectif ?",
             "form.goalAusbildung": "Formation professionnelle — Ausbildung",
@@ -529,7 +531,7 @@ var I18N = (function () {
 
             "insta.title": "Suivez-nous sur Instagram",
             "insta.desc": "Dernières nouvelles, événements et conseils",
-            "insta.btn": "@aelgermanyschule — 10K+ abonnés",
+            "insta.btn": "@alfa.hausgoethe — 10K+ abonnés",
 
             // Hero Annotation Pins
             "hero.pin.courses": "Cours A1–B2",
@@ -538,7 +540,7 @@ var I18N = (function () {
             "hero.pin.ausbildung.sub": "Formation pro en Allemagne",
             "hero.pin.visa": "Préparation Visa",
             "hero.pin.visa.sub": "Entretien + dossier complet",
-            "hero.pin.branch": "Branche Marrakech",
+            "hero.pin.branch": "Branche Mohammedia",
             "hero.pin.branch.sub": "Inscrivez-vous via WhatsApp",
             "hero.ed.wa": "Inscription WhatsApp",
 
@@ -566,7 +568,7 @@ var I18N = (function () {
             "nav.about": "About Us",
             "nav.services": "Services",
             "nav.programs": "Programs",
-            "nav.branch": "Marrakech Branch",
+            "nav.branch": "Mohammedia Branch",
             "nav.whyUs": "Why Us",
             "nav.contact": "Contact Us",
 
@@ -574,7 +576,7 @@ var I18N = (function () {
             "hero.badge.seats": "Limited Spots",
             "hero.title.line1": "Your Future Starts",
             "hero.title.line2": "Here Towards <span class='title-germany'>Germany</span>",
-            "hero.subtitle": "A specialized institute for German language education and guidance towards studies and vocational training in Germany — from Marrakech to Germany, we guide you every step of the way.",
+            "hero.subtitle": "A specialized institute for German language education and guidance towards studies and vocational training in Germany — from Mohammedia to Germany, we guide you every step of the way.",
             "hero.cta.whatsapp": "Register via WhatsApp",
             "hero.cta.discover": "Book Your Free Spot",
             "hero.urgency": "Limited spots for September 2026 session — register before it's too late",
@@ -588,8 +590,8 @@ var I18N = (function () {
             "hero.anno.courses": "German Language Courses",
             "hero.anno.courses.desc": "All levels with certified programs",
             "hero.anno.branch": "Our Branch",
-            "hero.anno.branch.city": "Marrakech",
-            "hero.anno.branch.desc": "Your local institute in Marrakech",
+            "hero.anno.branch.city": "Mohammedia",
+            "hero.anno.branch.desc": "Your local institute in Mohammedia",
             "hero.anno.ausbild": "Career Orientation",
             "hero.anno.ausbild.desc": "Vocational training paths in Germany",
             "hero.anno.visa": "Visa Preparation",
@@ -600,14 +602,14 @@ var I18N = (function () {
             "hero.anno.alllevels": "All Levels",
 
             "proof.instagram": "Instagram Followers",
-            "proof.branches": "Branches in Morocco",
+            "proof.branches": "Location in Mohammedia",
             "proof.focus": "Germany Focused",
             "proof.guided": "Students Guided",
 
             "about.tag": "About Us",
             "about.title": "Your Gateway to a Future in Germany",
-            "about.desc": "Leading institute in German language education and professional guidance",
-            "about.lead": "<strong>AEL Germany Schule</strong> is a specialized institute in German language education, guiding students and professionals towards study, work, and vocational training opportunities in Germany.",
+            "about.desc": "Your gateway to Germany",
+            "about.lead": "<strong>Alfa Haus Goethe</strong> is a specialized institute in German language education, guiding students and professionals towards study, work, and vocational training opportunities in Germany.",
             "about.p1": "We offer comprehensive educational programs covering all levels from A1 to B2, with specialized academic and professional guidance that helps our students achieve their goals successfully.",
             "about.p2": "Thanks to a team of qualified instructors and modern educational programs, we ensure our students a professional and integrated educational experience.",
             "about.badge": "Successful Graduate",
@@ -672,19 +674,19 @@ var I18N = (function () {
             "why.w2.text": "A specialized team accompanies you at every step of your journey.",
             "why.w3.title": "Germany-Focused Programs",
             "why.w3.text": "Educational content specifically designed to meet the requirements of German institutions.",
-            "why.w4.title": "Multiple Branches",
-            "why.w4.text": "Present in several Moroccan cities to bring services closer to students.",
+            "why.w4.title": "Strategic Location",
+            "why.w4.text": "A prime location in Mohammedia for easy access.",
             "why.w5.title": "Personalized Follow-up",
             "why.w5.text": "Individual follow-up for each student to ensure continuous progress.",
             "why.w6.title": "Beginner-Friendly Approach",
             "why.w6.text": "A motivating and comfortable learning environment, even for those with no prior experience.",
 
-            "branch.tag": "Marrakech Branch",
-            "branch.title": "Our New Branch in Marrakech",
+            "branch.tag": "Mohammedia Branch",
+            "branch.title": "Our Branch in Mohammedia",
             "branch.desc": "Close to you for better service",
             "branch.new": "New",
             "branch.address.label": "Address",
-            "branch.address.value": "Hay Ben Tachfine, Building No. 124, 3rd Floor, opposite Al Khalid 1 Private School, Hay Azli, Marrakech",
+            "branch.address.value": "Corner of Bd Abderrahmane Serghni and Rue Safi, Immeuble Ibrahim II, Floor 3, Apartment 14, Mohammedia",
             "branch.phone.label": "Phone",
             "branch.hours.label": "Working Hours",
             "branch.hours.value": "Monday - Saturday: 9:00 AM - 7:00 PM",
@@ -699,7 +701,7 @@ var I18N = (function () {
 
             "footer.about": "A specialized institute in German language education and guidance towards studies and vocational training in Germany.",
             "footer.quickLinks": "Quick Links",
-            "footer.copyright": "&copy; 2026 AEL Germany Schule. All rights reserved.",
+            "footer.copyright": "&copy; 2026 Alfa Haus Goethe. All rights reserved.",
 
             "nav.faq": "FAQ",
 
@@ -709,7 +711,7 @@ var I18N = (function () {
             "hero.trust": "+51 students enrolled this month",
 
             "journey.tag": "Your Journey",
-            "journey.title": "From Marrakech to Germany in 6 Steps",
+            "journey.title": "From Mohammedia to Germany in 6 Steps",
             "journey.desc": "A clear path where we guide you from the first step to arrival",
             "journey.s1.title": "Registration & Assessment",
             "journey.s1.text": "Register with us and we'll assess your current level to create a personalized learning plan.",
@@ -727,26 +729,23 @@ var I18N = (function () {
 
             "success.tag": "Success Stories",
             "success.title": "Our Students Are in Germany Now",
-            "success.desc": "Real stories of students whose lives changed with AEL",
-            "success.t1.text": "Thanks to AEL Germany Schule, I got my B1 in just 8 months and I'm now studying nursing in Munich. The teachers were excellent and the support didn't stop even after I arrived in Germany.",
+            "success.desc": "Real stories of students whose lives changed with Alfa Haus Goethe",
+            "success.t1.text": "Thanks to Alfa Haus Goethe, I got my B1 in just 8 months and I'm now studying nursing in Munich. The teachers were excellent and the support didn't stop even after I arrived in Germany.",
             "success.t1.name": "Yasmine — Munich",
             "success.t1.role": "Nursing student — Ausbildung",
-            "success.t2.text": "I was scared to start but the team at AEL helped me step by step. From zero to B1 then Ausbildung in Hamburg. The best decision I ever made.",
+            "success.t2.text": "I was scared to start but the team at Alfa Haus Goethe helped me step by step. From zero to B1 then Ausbildung in Hamburg. The best decision I ever made.",
             "success.t2.name": "Ayoub — Hamburg",
             "success.t2.role": "Vocational training — Mechatroniker",
-            "success.t3.text": "AEL is not just a language institute, it's a family that accompanies you at every step. The career guidance and visa assistance were excellent. I'm now in Berlin and very happy.",
+            "success.t3.text": "Alfa Haus Goethe is not just a language institute, it's a family that accompanies you at every step. The career guidance and visa assistance were excellent. I'm now in Berlin and very happy.",
             "success.t3.name": "Sara — Berlin",
             "success.t3.role": "University student — Informatik",
 
             "videos.tag": "Video Testimonials",
             "videos.title": "Hear Directly from Our Students",
             "videos.desc": "Real experiences told by those who lived them",
-            "videos.v1.name": "Yasmine — Munich",
-            "videos.v1.desc": "From Marrakech to Ausbildung in Germany",
-            "videos.v2.name": "Ayoub — Hamburg",
-            "videos.v2.desc": "My journey from zero to B1 in 8 months",
-            "videos.v3.name": "Sara — Berlin",
-            "videos.v3.desc": "How AEL helped me with university admission",
+            "videos.featured.title": "Watch our students' experiences on Facebook",
+            "videos.featured.desc": "Real videos from our students' journeys to Germany",
+            "videos.cta.fb": "Watch more on Facebook",
 
             "form.tag": "Free Consultation",
             "form.title": "Book a Free Orientation Session",
@@ -759,6 +758,10 @@ var I18N = (function () {
             "form.phone": "Phone Number (WhatsApp)",
             "form.city": "City",
             "form.cityPlaceholder": "Choose city",
+            "form.city.mohammedia": "Mohammedia",
+            "form.city.casablanca": "Casablanca",
+            "form.city.rabat": "Rabat",
+            "form.city.other": "Other city",
             "form.goal": "Your Goal",
             "form.goalPlaceholder": "What is your goal?",
             "form.goalAusbildung": "Vocational Training — Ausbildung",
@@ -795,7 +798,7 @@ var I18N = (function () {
 
             "insta.title": "Follow Us on Instagram",
             "insta.desc": "Latest news, events, and tips",
-            "insta.btn": "@aelgermanyschule — 10K+ followers",
+            "insta.btn": "@alfa.hausgoethe — 10K+ followers",
 
             // Hero Annotation Pins
             "hero.pin.courses": "Courses A1–B2",
@@ -804,7 +807,7 @@ var I18N = (function () {
             "hero.pin.ausbildung.sub": "Vocational training in Germany",
             "hero.pin.visa": "Visa Preparation",
             "hero.pin.visa.sub": "Interview + complete file",
-            "hero.pin.branch": "Marrakech Branch",
+            "hero.pin.branch": "Mohammedia Branch",
             "hero.pin.branch.sub": "Register via WhatsApp",
             "hero.ed.wa": "WhatsApp Registration",
 
@@ -871,7 +874,10 @@ var I18N = (function () {
         }
 
         // Save preference
-        try { localStorage.setItem('ael-lang', lang); } catch (e) {}
+        try { localStorage.setItem('ahg-lang', lang); } catch (e) {}
+
+        // Notify other scripts of language change
+        document.dispatchEvent(new Event('langChanged'));
 
         // Close dropdown
         var dropdown = document.getElementById('langDropdown');
@@ -881,7 +887,7 @@ var I18N = (function () {
     function init() {
         // Restore saved language
         try {
-            var saved = localStorage.getItem('ael-lang');
+            var saved = localStorage.getItem('ahg-lang');
             if (saved && translations[saved]) {
                 currentLang = saved;
             }

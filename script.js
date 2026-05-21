@@ -1,5 +1,5 @@
 /* ============================================
-   AEL Germany Schule — Premium Interactions
+   Alfa Haus Goethe — Premium Interactions
    ============================================ */
 
 (function () {
@@ -11,7 +11,7 @@
 
     function getPreferredTheme() {
         try {
-            var saved = localStorage.getItem('ael-theme');
+            var saved = localStorage.getItem('ahg-theme');
             if (saved) return saved;
         } catch (e) {}
         return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
@@ -19,7 +19,7 @@
 
     function setTheme(theme) {
         root.setAttribute('data-theme', theme);
-        try { localStorage.setItem('ael-theme', theme); } catch (e) {}
+        try { localStorage.setItem('ahg-theme', theme); } catch (e) {}
     }
 
     setTheme(getPreferredTheme());
@@ -32,7 +32,7 @@
     }
 
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (e) {
-        try { if (localStorage.getItem('ael-theme')) return; } catch (ex) {}
+        try { if (localStorage.getItem('ahg-theme')) return; } catch (ex) {}
         setTheme(e.matches ? 'dark' : 'light');
     });
 
@@ -202,7 +202,7 @@
     if (urgencyBanner) {
         // Check if dismissed
         try {
-            if (localStorage.getItem('ael-urgency-closed')) {
+            if (localStorage.getItem('ahg-urgency-closed')) {
                 urgencyBanner.classList.add('hidden');
             } else {
                 document.body.classList.add('has-urgency-banner');
@@ -216,7 +216,7 @@
             urgencyClose.addEventListener('click', function () {
                 urgencyBanner.classList.add('hidden');
                 document.body.classList.remove('has-urgency-banner');
-                try { localStorage.setItem('ael-urgency-closed', '1'); } catch (e) {}
+                try { localStorage.setItem('ahg-urgency-closed', '1'); } catch (e) {}
             });
         }
 
@@ -278,17 +278,95 @@
             var goal = document.getElementById('formGoal').value;
             var level = document.getElementById('formLevel').value;
 
-            var msg = 'مرحبا، أريد التسجيل في دورات اللغة الألمانية\n\n'
-                + 'الاسم: ' + name + '\n'
-                + 'الهاتف: ' + phone + '\n'
-                + 'المدينة: ' + city + '\n'
-                + 'الهدف: ' + goal + '\n'
-                + 'المستوى: ' + level;
+            var lang = localStorage.getItem('ahg-lang') || 'ar';
+            var msg;
+            if (lang === 'fr') {
+                msg = 'Bonjour, je souhaite m\'inscrire aux cours d\'allemand\n\n'
+                    + 'Nom: ' + name + '\n'
+                    + 'Téléphone: ' + phone + '\n'
+                    + 'Ville: ' + city + '\n'
+                    + 'Objectif: ' + goal + '\n'
+                    + 'Niveau: ' + level;
+            } else if (lang === 'en') {
+                msg = 'Hello, I would like to register for German language courses\n\n'
+                    + 'Name: ' + name + '\n'
+                    + 'Phone: ' + phone + '\n'
+                    + 'City: ' + city + '\n'
+                    + 'Goal: ' + goal + '\n'
+                    + 'Level: ' + level;
+            } else {
+                msg = 'مرحبا، أريد التسجيل في دورات اللغة الألمانية\n\n'
+                    + 'الاسم: ' + name + '\n'
+                    + 'الهاتف: ' + phone + '\n'
+                    + 'المدينة: ' + city + '\n'
+                    + 'الهدف: ' + goal + '\n'
+                    + 'المستوى: ' + level;
+            }
 
-            var url = 'https://wa.me/212777881020?text=' + encodeURIComponent(msg);
+            var url = 'https://wa.me/212704417799?text=' + encodeURIComponent(msg);
             window.open(url, '_blank');
         });
     }
+
+    // --- Form Validation UX ---
+    if (leadForm) {
+        var fields = leadForm.querySelectorAll('input[required], select[required]');
+        fields.forEach(function(field) {
+            field.addEventListener('blur', function() {
+                validateField(field);
+            });
+            field.addEventListener('input', function() {
+                if (field.classList.contains('field-error')) {
+                    validateField(field);
+                }
+            });
+        });
+
+        function validateField(field) {
+            var parent = field.closest('.form-group');
+            var existing = parent.querySelector('.field-error-msg');
+            if (existing) existing.remove();
+
+            if (!field.value || (field.tagName === 'SELECT' && field.value === '')) {
+                field.classList.add('field-error');
+                var msg = document.createElement('span');
+                msg.className = 'field-error-msg';
+                var lang = localStorage.getItem('ahg-lang') || 'ar';
+                var texts = {ar: 'هذا الحقل مطلوب', fr: 'Ce champ est requis', en: 'This field is required'};
+                msg.textContent = texts[lang] || texts.ar;
+                parent.appendChild(msg);
+                return false;
+            } else if (field.id === 'formPhone' && !/^[\+]?[\d\s\-]{8,15}$/.test(field.value.trim())) {
+                field.classList.add('field-error');
+                var msg = document.createElement('span');
+                msg.className = 'field-error-msg';
+                var lang = localStorage.getItem('ahg-lang') || 'ar';
+                var texts = {ar: 'رقم هاتف غير صالح', fr: 'Numéro de téléphone invalide', en: 'Invalid phone number'};
+                msg.textContent = texts[lang] || texts.ar;
+                parent.appendChild(msg);
+                return false;
+            } else {
+                field.classList.remove('field-error');
+                return true;
+            }
+        }
+    }
+
+    // --- Language-aware WhatsApp links ---
+    function updateWhatsAppLinks() {
+        var lang = localStorage.getItem('ahg-lang') || 'ar';
+        var texts = {
+            ar: 'أريد التسجيل في الدورة القادمة',
+            fr: 'Je souhaite m\'inscrire à la prochaine session',
+            en: 'I would like to register for the next session'
+        };
+        var msg = texts[lang] || texts.ar;
+        document.querySelectorAll('a[href*="wa.me/212704417799?text="]').forEach(function(link) {
+            link.href = 'https://wa.me/212704417799?text=' + encodeURIComponent(msg);
+        });
+    }
+    updateWhatsAppLinks();
+    document.addEventListener('langChanged', updateWhatsAppLinks);
 
     // --- Mobile Sticky CTA — Show on scroll ---
     var mobileCta = document.getElementById('mobileCta');
