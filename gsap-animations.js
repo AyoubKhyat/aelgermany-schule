@@ -409,6 +409,71 @@
     }
 
     // =========================================================
+    // 10. SCROLL-DRIVEN 3D TIMELINE (journey steps)
+    // =========================================================
+    var journeySteps = document.querySelectorAll('.journey .journey-step');
+    journeySteps.forEach(function (step) {
+        step.classList.add('scroll-3d-step');
+        ScrollTrigger.create({
+            trigger: step,
+            start: 'top 85%',
+            once: true,
+            onEnter: function () {
+                step.classList.add('in-view');
+            }
+        });
+    });
+
+    // =========================================================
+    // 11. GLASSMORPHISM TILT — mouse-tracking light reflection
+    // =========================================================
+    if (isDesktop) {
+        document.querySelectorAll('.success-card[data-glass]').forEach(function (card) {
+            card.addEventListener('mousemove', function (e) {
+                var rect = card.getBoundingClientRect();
+                var x = ((e.clientX - rect.left) / rect.width * 100).toFixed(1);
+                var y = ((e.clientY - rect.top) / rect.height * 100).toFixed(1);
+                card.style.setProperty('--mouse-x', x + '%');
+                card.style.setProperty('--mouse-y', y + '%');
+            });
+            card.addEventListener('mouseleave', function () {
+                card.style.setProperty('--mouse-x', '50%');
+                card.style.setProperty('--mouse-y', '50%');
+            });
+        });
+    }
+
+    // =========================================================
+    // 12. GLOBE entrance animation
+    // =========================================================
+    var globe = document.querySelector('.globe-container');
+    if (globe) {
+        gsap.from(globe, {
+            opacity: 0,
+            scale: 0.6,
+            rotateY: isDesktop ? -30 : 0,
+            duration: 1.2,
+            ease: 'back.out(1.4)',
+            scrollTrigger: { trigger: globe, start: 'top 85%' }
+        });
+    }
+
+    // =========================================================
+    // 13. 3D FLAG entrance animation
+    // =========================================================
+    var flag3d = document.querySelector('.flag-3d');
+    if (flag3d) {
+        gsap.from(flag3d, {
+            opacity: 0,
+            x: isDesktop ? 40 : 20,
+            scale: 0.8,
+            duration: 1,
+            ease: 'power3.out',
+            scrollTrigger: { trigger: flag3d, start: 'top 85%' }
+        });
+    }
+
+    // =========================================================
     // REFRESH on language change
     // =========================================================
     document.querySelectorAll('[data-lang]').forEach(function (btn) {
