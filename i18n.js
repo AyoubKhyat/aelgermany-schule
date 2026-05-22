@@ -293,7 +293,9 @@ var I18N = (function () {
             "mobile.cta.wa": "واتساب",
             "mobile.cta.call": "اتصل بنا",
             "mobile.cta.programs": "البرامج",
-            "wa.bubble": "مرحباً! هل تريد معلومات عن دورات اللغة الألمانية؟ تواصل معنا الآن 🇩🇪"
+            "wa.bubble": "مرحباً! هل تريد معلومات عن دورات اللغة الألمانية؟ تواصل معنا الآن 🇩🇪",
+            "services.back.cta": "تواصل معنا للتسجيل",
+            "services.back.wa": "واتساب"
         },
 
         // ──────────── FRENCH ────────────
@@ -561,7 +563,9 @@ var I18N = (function () {
             "mobile.cta.wa": "WhatsApp",
             "mobile.cta.call": "Appeler",
             "mobile.cta.programs": "Programmes",
-            "wa.bubble": "Bonjour ! Vous souhaitez des informations sur nos cours d'allemand ? Contactez-nous maintenant 🇩🇪"
+            "wa.bubble": "Bonjour ! Vous souhaitez des informations sur nos cours d'allemand ? Contactez-nous maintenant 🇩🇪",
+            "services.back.cta": "Contactez-nous pour vous inscrire",
+            "services.back.wa": "WhatsApp"
         },
 
         // ──────────── ENGLISH ────────────
@@ -829,7 +833,9 @@ var I18N = (function () {
             "mobile.cta.wa": "WhatsApp",
             "mobile.cta.call": "Call Us",
             "mobile.cta.programs": "Programs",
-            "wa.bubble": "Hello! Want info about our German language courses? Contact us now 🇩🇪"
+            "wa.bubble": "Hello! Want info about our German language courses? Contact us now 🇩🇪",
+            "services.back.cta": "Contact us to register",
+            "services.back.wa": "WhatsApp"
         }
     };
 
@@ -839,7 +845,7 @@ var I18N = (function () {
         en: { dir: 'ltr', lang: 'en', flag: '\u{1F1EC}\u{1F1E7}', code: 'EN' }
     };
 
-    var currentLang = 'ar';
+    var currentLang = 'fr';
 
     function setLanguage(lang) {
         if (!translations[lang]) return;

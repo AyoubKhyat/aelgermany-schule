@@ -14,7 +14,7 @@
             var saved = localStorage.getItem('ahg-theme');
             if (saved) return saved;
         } catch (e) {}
-        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        return 'light';
     }
 
     function setTheme(theme) {

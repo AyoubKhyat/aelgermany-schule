@@ -201,14 +201,14 @@ section[id] {
 
 /* --- Scroll Animations --- */
 .animate-on-scroll {
-    opacity: 0;
-    transform: translateY(20px);
+    opacity: 1;
+    transform: none;
     transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .animate-on-scroll.visible {
     opacity: 1;
-    transform: translateY(0);
+    transform: none;
 }
 
 .no-js .animate-on-scroll,
@@ -1418,6 +1418,36 @@ html[dir="rtl"] .hero-ed__anno--whatsapp {
     .hero-ed__bg-bottom { font-size: 16vw; }
 }
 
+/* --- Hero responsive: Extra-small mobile (360px) --- */
+@media (max-width: 375px) {
+    .hero-ed__left {
+        padding-inline: 12px;
+    }
+
+    .hero-ed__title {
+        font-size: clamp(1.4rem, 7.5vw, 1.8rem);
+        word-break: break-word;
+        overflow-wrap: break-word;
+    }
+
+    .hero-ed__sub {
+        font-size: 0.82rem;
+    }
+
+    .hero-ed__actions .hero-ed__btn {
+        padding: 10px 12px;
+        font-size: 0.8rem;
+    }
+
+    .hero-ed__badge {
+        font-size: 0.68rem;
+        padding: 4px 10px;
+    }
+
+    .hero-ed__scene { max-width: 220px; }
+    .hero-ed__building-img { max-width: 220px; }
+}
+
 /* --- Buttons --- */
 .btn {
     display: inline-flex;
@@ -1995,41 +2025,18 @@ html[dir="rtl"] .hero-ed__anno--whatsapp {
 }
 
 .service-card {
-    background: var(--card-bg);
     border-radius: var(--radius-xl);
-    padding: 32px 28px;
-    border: 1px solid var(--gray-200);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.3s ease;
     position: relative;
-    overflow: hidden;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    overflow: visible;
 }
 
 .service-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: var(--red);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.4s ease;
+    display: none;
 }
 
 .service-card::after {
     display: none;
-}
-
-.service-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 32px rgba(0,0,0,0.1);
-    border-color: transparent;
-}
-
-.service-card:hover::before {
-    transform: scaleX(1);
 }
 
 .service-icon {
@@ -3002,6 +3009,24 @@ html[dir="rtl"] .hero-ed__anno--whatsapp {
     left: 10px;
 }
 
+[data-theme="dark"] .whatsapp-bubble {
+    background: #2a2a2f;
+    color: #e0e0e0;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+}
+
+[data-theme="dark"] .whatsapp-bubble::after {
+    background: #2a2a2f;
+}
+
+[data-theme="dark"] .whatsapp-bubble-close {
+    color: #999;
+}
+
+[data-theme="dark"] .whatsapp-bubble-close:hover {
+    color: #fff;
+}
+
 @keyframes whatsapp-pulse {
     0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.3); }
     50% { box-shadow: 0 4px 30px rgba(37,211,102,0.5), 0 0 0 10px rgba(37,211,102,0.08); }
@@ -3198,7 +3223,7 @@ html[dir="rtl"] .hero-ed__anno--whatsapp {
         grid-template-columns: 1fr;
     }
 
-    .service-card {
+    .service-card-front {
         padding: 28px 24px;
     }
 
@@ -3336,7 +3361,7 @@ html[dir="rtl"] .hero-ed__anno--whatsapp {
         font-size: 1.5rem;
     }
 
-    .service-card {
+    .service-card-front {
         padding: 24px 20px;
     }
 
@@ -5784,8 +5809,8 @@ html[dir="rtl"] .mcta-label {
         padding-bottom: 80px;
     }
 
-    /* Hide floating WhatsApp on mobile */
-    .whatsapp-float {
+    /* Hide floating WhatsApp on mobile — mobile sticky CTA replaces it */
+    .whatsapp-wrapper {
         display: none !important;
     }
 }
@@ -5924,4 +5949,37 @@ html[dir="rtl"] .mcta-label {
     .gallery-item:hover {
         transform: none;
     }
+}
+
+/* ============================================
+   TEMPORARY: Hide 3D decorative elements
+   until styles-3d.css is re-enabled
+   ============================================ */
+.globe-container,
+.globe-3d,
+.flag-3d {
+    display: none !important;
+}
+
+.journey-line,
+.timeline-line {
+    display: none !important;
+}
+
+.service-card-inner {
+    display: contents;
+}
+
+.service-card-front {
+    display: flex;
+    flex-direction: column;
+}
+
+.service-card-back {
+    display: none;
+}
+
+.scroll-3d-step {
+    opacity: 1 !important;
+    transform: none !important;
 }

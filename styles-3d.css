@@ -680,54 +680,21 @@ section.services .services-grid {
 
 section.services .service-card {
   position: relative;
-  background: var(--card-bg, #ffffff);
-  border: 1px solid var(--gray-200, rgba(0,0,0,0.08));
+  background: transparent;
+  border: none;
   border-radius: var(--radius-lg);
-  padding: 32px 28px;
-  transform: rotateX(2deg) rotateY(0deg) translateZ(0);
-  transform-style: preserve-3d;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
-  transition: transform 0.6s var(--transition-smooth),
-              box-shadow 0.6s var(--transition-smooth);
-  overflow: hidden;
+  padding: 0;
+  box-shadow: none;
+  overflow: visible;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Red top accent line */
 section.services .service-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: var(--red);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.4s ease;
-  z-index: 1;
-}
-
-section.services .service-card:hover::before {
-  transform: scaleX(1);
-}
-
-/* Alternate card tilts */
-section.services .service-card:nth-child(1) {
-  transform: rotateX(2deg) rotateY(1.5deg) translateZ(0);
-}
-
-section.services .service-card:nth-child(2) {
-  transform: rotateX(1.5deg) rotateY(0deg) translateZ(0);
-}
-
-section.services .service-card:nth-child(3) {
-  transform: rotateX(2deg) rotateY(-1.5deg) translateZ(0);
+  display: none;
 }
 
 section.services .service-card:hover {
-  transform: rotateX(0deg) rotateY(0deg) translateZ(15px) translateY(-6px);
-  box-shadow: 0 12px 32px rgba(0,0,0,0.1);
-  border-color: transparent;
+  transform: translateY(-4px);
 }
 
 /* Red square icon */
@@ -740,16 +707,12 @@ section.services .service-icon {
   border-radius: 12px;
   background: var(--red);
   margin-bottom: 20px;
-  transform: translateZ(25px);
-  transition: transform 0.5s var(--transition-smooth),
-              border-radius 0.4s ease,
-              background 0.4s ease;
+  transition: border-radius 0.4s ease, background 0.4s ease;
   position: relative;
   z-index: 1;
 }
 
 section.services .service-card:hover .service-icon {
-  transform: translateZ(30px) scale(1.05);
   border-radius: 16px;
   background: #b30000;
 }
@@ -764,7 +727,6 @@ section.services .service-card h3 {
   font-weight: 700;
   font-size: 1.1rem;
   margin-bottom: 10px;
-  transform: translateZ(10px);
   color: var(--text);
 }
 
@@ -772,7 +734,6 @@ section.services .service-card p {
   color: var(--text-muted);
   line-height: 1.7;
   font-size: 0.88rem;
-  transform: translateZ(5px);
 }
 
 section.services .service-tag {
@@ -785,12 +746,7 @@ section.services .service-tag {
   font-size: 0.82rem;
   font-weight: 600;
   color: var(--red);
-  transform: translateZ(8px);
-  transition: background 0.3s ease, transform 0.3s ease;
-}
-
-section.services .service-card:hover .service-tag {
-  transform: translateZ(15px);
+  transition: background 0.3s ease;
 }
 
 section.services .service-tag {
@@ -1317,12 +1273,6 @@ html[dir="rtl"] section.programs .program-note {
     gap: 2rem;
   }
 
-  section.services .service-card:nth-child(1),
-  section.services .service-card:nth-child(2),
-  section.services .service-card:nth-child(3) {
-    transform: rotateX(1deg) rotateY(0deg) translateZ(0);
-  }
-
   /* Success */
   section.success .success-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -1500,30 +1450,18 @@ html[dir="rtl"] section.programs .program-note {
     gap: 1.5rem;
   }
 
-  section.services .service-card {
-    transform: none;
+  section.services .service-card-front {
     padding: 2rem 1.5rem;
     border-radius: var(--radius-md);
   }
 
-  section.services .service-card:nth-child(1),
-  section.services .service-card:nth-child(2),
-  section.services .service-card:nth-child(3) {
-    transform: none;
-  }
-
   section.services .service-card:hover {
-    transform: translateY(-6px) scale(1.01);
+    transform: translateY(-4px);
   }
 
   section.services .service-icon {
     width: 56px;
     height: 56px;
-    transform: none;
-  }
-
-  section.services .service-card:hover .service-icon {
-    transform: scale(1.05);
   }
 
   /* Success */
@@ -3468,6 +3406,569 @@ section.insta-section .insta-item {
 .gsap-ready .faq-answer {
     transition: max-height 0.35s ease, opacity 0.25s ease, padding 0.25s ease;
 }
+
+/* ============================================================
+   6. 3D CARD FLIP ON SERVICES (.service-card)
+   ============================================================ */
+
+/* Flip container — applied to .service-card parent or the card itself */
+.service-card {
+  perspective: 1000px;
+}
+
+.service-card .service-card-inner {
+  position: relative;
+  width: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s var(--transition-smooth);
+}
+
+.service-card:hover .service-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* RTL: reverse the flip direction */
+[dir="rtl"] .service-card:hover .service-card-inner {
+  transform: rotateY(-180deg);
+}
+
+.service-card-front,
+.service-card-back {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.service-card-front {
+  position: relative;
+  z-index: 2;
+  background: var(--card-bg, #ffffff);
+  border: 1px solid var(--gray-200, rgba(0,0,0,0.08));
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+}
+
+.service-card-back {
+  position: absolute;
+  inset: 0;
+  transform: rotateY(180deg);
+  z-index: 1;
+  background: linear-gradient(160deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  border: 1px solid rgba(221, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  gap: 1.25rem;
+}
+
+/* RTL back face */
+[dir="rtl"] .service-card-back {
+  transform: rotateY(-180deg);
+}
+
+/* Red/gold accent on back face */
+.service-card-back::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 30% 20%, var(--red-glow) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 80%, var(--gold-glow) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.service-card-back .back-title {
+  position: relative;
+  color: #ffffff;
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.service-card-back .back-cta {
+  position: relative;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.service-card-back .back-whatsapp-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.5rem;
+  background: #25d366;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 50px;
+  border: none;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card-back .back-whatsapp-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 28px rgba(37, 211, 102, 0.5);
+}
+
+/* Dark mode: flip card */
+[data-theme="dark"] .service-card-front {
+  background: var(--glass);
+  border-color: var(--glass-border);
+}
+
+[data-theme="dark"] .service-card-back {
+  background: linear-gradient(160deg, #0d0d14 0%, #111827 50%, #0a1628 100%);
+}
+
+
+/* ============================================================
+   7. 3D GLOBE WITH MOROCCO→GERMANY ROUTE
+   ============================================================ */
+
+.globe-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 2rem;
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.globe-3d {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 35% 35%, rgba(255,255,255,0.5), transparent 50%),
+    radial-gradient(circle at 50% 50%, #2196f3 0%, #1565c0 40%, #0d47a1 70%, #0a2a5e 100%);
+  box-shadow:
+    inset -20px -20px 40px rgba(0, 0, 0, 0.35),
+    inset 10px 10px 30px rgba(255, 255, 255, 0.15),
+    0 8px 32px rgba(0, 0, 0, 0.2);
+  animation: globe-spin 20s linear infinite;
+  overflow: hidden;
+}
+
+/* Continent hint overlays */
+.globe-3d::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background:
+    /* Europe hint */
+    radial-gradient(ellipse 35px 25px at 52% 32%, rgba(76, 175, 80, 0.45) 0%, transparent 100%),
+    /* Africa/Morocco hint */
+    radial-gradient(ellipse 30px 40px at 45% 55%, rgba(76, 175, 80, 0.35) 0%, transparent 100%);
+  animation: globe-spin 20s linear infinite;
+}
+
+/* Arc path from Morocco to Germany */
+.globe-3d::after {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 80px;
+  top: 28%;
+  left: 38%;
+  border: 2px dashed var(--gold);
+  border-radius: 50%;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  transform: rotate(-30deg);
+  opacity: 0.7;
+  animation: globe-spin 20s linear infinite;
+}
+
+@keyframes globe-spin {
+  0%   { transform: rotateY(0deg); }
+  100% { transform: rotateY(360deg); }
+}
+
+/* Morocco dot (pulsing) */
+.globe-dot--morocco,
+.globe-dot--germany {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  z-index: 3;
+}
+
+.globe-dot--morocco {
+  background: var(--red);
+  bottom: 38%;
+  left: 42%;
+  box-shadow: 0 0 8px var(--red-glow), 0 0 16px var(--red-glow);
+  animation: globe-pulse 2s ease-in-out infinite;
+}
+
+.globe-dot--germany {
+  background: var(--gold);
+  top: 26%;
+  left: 50%;
+  box-shadow: 0 0 8px var(--gold-glow), 0 0 16px var(--gold-glow);
+  animation: globe-pulse 2s ease-in-out infinite 0.5s;
+}
+
+@keyframes globe-pulse {
+  0%, 100% { transform: scale(1);   opacity: 1; }
+  50%      { transform: scale(1.6); opacity: 0.6; }
+}
+
+/* Dark mode: globe */
+[data-theme="dark"] .globe-3d {
+  background:
+    radial-gradient(circle at 35% 35%, rgba(255,255,255,0.25), transparent 50%),
+    radial-gradient(circle at 50% 50%, #1565c0 0%, #0d47a1 40%, #0a2a5e 70%, #051630 100%);
+  box-shadow:
+    inset -20px -20px 40px rgba(0, 0, 0, 0.5),
+    inset 10px 10px 30px rgba(255, 255, 255, 0.08),
+    0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+
+/* ============================================================
+   8. FLOATING 3D GERMAN FLAG
+   ============================================================ */
+
+.flag-3d {
+  display: flex;
+  width: 120px;
+  height: 80px;
+  perspective: 600px;
+  position: relative;
+}
+
+.flag-3d .flag-strip {
+  flex: 1;
+  transform-origin: left center;
+  animation: flag-wave 3s ease-in-out infinite;
+}
+
+.flag-3d .flag-strip:nth-child(1) { animation-delay: 0s; }
+.flag-3d .flag-strip:nth-child(2) { animation-delay: 0.12s; }
+.flag-3d .flag-strip:nth-child(3) { animation-delay: 0.24s; }
+.flag-3d .flag-strip:nth-child(4) { animation-delay: 0.36s; }
+.flag-3d .flag-strip:nth-child(5) { animation-delay: 0.48s; }
+
+/* Black stripe — top third */
+.flag-3d .flag-strip:nth-child(1),
+.flag-3d .flag-strip:nth-child(2) {
+  background: linear-gradient(180deg, #000000 0%, #1a1a1a 100%);
+}
+
+/* Red stripe — middle third */
+.flag-3d .flag-strip:nth-child(3) {
+  background: linear-gradient(180deg, #dd0000 0%, #bb0000 100%);
+}
+
+/* Gold stripe — bottom third */
+.flag-3d .flag-strip:nth-child(4),
+.flag-3d .flag-strip:nth-child(5) {
+  background: linear-gradient(180deg, #ffcc00 0%, #e6b800 100%);
+}
+
+/* Horizontal bands: each strip shows all 3 colors */
+.flag-3d .flag-strip {
+  background:
+    linear-gradient(
+      to bottom,
+      #000000 0%, #000000 33.33%,
+      #dd0000 33.33%, #dd0000 66.66%,
+      #ffcc00 66.66%, #ffcc00 100%
+    );
+}
+
+@keyframes flag-wave {
+  0%, 100% {
+    transform: rotateY(0deg) scaleX(1);
+  }
+  25% {
+    transform: rotateY(15deg) scaleX(0.97);
+  }
+  50% {
+    transform: rotateY(-5deg) scaleX(1.01);
+  }
+  75% {
+    transform: rotateY(8deg) scaleX(0.99);
+  }
+}
+
+/* 3D shadow beneath the flag */
+.flag-3d::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 10%;
+  width: 80%;
+  height: 12px;
+  background: radial-gradient(ellipse, rgba(0,0,0,0.15), transparent 70%);
+  border-radius: 50%;
+  filter: blur(3px);
+}
+
+/* Dark mode: flag — slightly brighter golds */
+[data-theme="dark"] .flag-3d .flag-strip {
+  background:
+    linear-gradient(
+      to bottom,
+      #1a1a1a 0%, #1a1a1a 33.33%,
+      #ee1111 33.33%, #ee1111 66.66%,
+      #ffdd33 66.66%, #ffdd33 100%
+    );
+}
+
+
+/* ============================================================
+   9. 3D TILT CARDS WITH GLASSMORPHISM (.success-card upgrade)
+   ============================================================ */
+
+/* Enhanced glassmorphism layer */
+section.success .success-card[data-glass] {
+  background: var(--glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  --mouse-x: 50%;
+  --mouse-y: 50%;
+}
+
+/* Dynamic light reflection following mouse */
+section.success .success-card[data-glass]::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    350px circle at var(--mouse-x) var(--mouse-y),
+    rgba(255, 255, 255, 0.15) 0%,
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+section.success .success-card[data-glass]:hover::before {
+  opacity: 1;
+}
+
+/* Subtle inner glow on hover */
+section.success .success-card[data-glass]:hover {
+  box-shadow:
+    var(--shadow-3d-hover),
+    inset 0 0 30px rgba(255, 255, 255, 0.06),
+    inset 0 0 60px rgba(221, 0, 0, 0.03);
+}
+
+/* Dark mode: tilt card glow */
+[data-theme="dark"] section.success .success-card[data-glass]:hover {
+  box-shadow:
+    var(--shadow-3d-hover),
+    inset 0 0 30px rgba(255, 255, 255, 0.03),
+    inset 0 0 60px rgba(221, 0, 0, 0.05);
+}
+
+[data-theme="dark"] section.success .success-card[data-glass]::before {
+  background: radial-gradient(
+    350px circle at var(--mouse-x) var(--mouse-y),
+    rgba(255, 255, 255, 0.07) 0%,
+    transparent 60%
+  );
+}
+
+
+/* ============================================================
+   10. SCROLL-DRIVEN 3D TIMELINE (.journey-step upgrade)
+   ============================================================ */
+
+/* Initial hidden state — 3D unfold from top */
+section.journey .journey-step.scroll-3d-step {
+  transform: perspective(800px) rotateX(-60deg);
+  opacity: 0;
+  transform-origin: top center;
+  transition: transform 0.8s var(--transition-smooth),
+              opacity 0.6s ease;
+}
+
+/* Staggered delays per step */
+section.journey .journey-step.scroll-3d-step:nth-child(1) { transition-delay: 0s; }
+section.journey .journey-step.scroll-3d-step:nth-child(2) { transition-delay: 0.1s; }
+section.journey .journey-step.scroll-3d-step:nth-child(3) { transition-delay: 0.2s; }
+section.journey .journey-step.scroll-3d-step:nth-child(4) { transition-delay: 0.3s; }
+section.journey .journey-step.scroll-3d-step:nth-child(5) { transition-delay: 0.4s; }
+section.journey .journey-step.scroll-3d-step:nth-child(6) { transition-delay: 0.5s; }
+
+/* Active/in-view state — fully unfolded */
+section.journey .journey-step.scroll-3d-step.in-view {
+  transform: perspective(800px) rotateX(0deg);
+  opacity: 1;
+}
+
+/* Step marker 3D pop when in view */
+section.journey .journey-step.scroll-3d-step .step-marker span {
+  transition: transform 0.5s var(--transition-smooth) 0.15s,
+              box-shadow 0.5s ease 0.15s;
+}
+
+section.journey .journey-step.scroll-3d-step.in-view .step-marker span {
+  transform: scale(1.15) translateZ(15px);
+  box-shadow:
+    0 12px 32px var(--red-glow),
+    0 0 0 4px rgba(221, 0, 0, 0.15),
+    inset 0 -3px 6px rgba(0, 0, 0, 0.2),
+    inset 0 3px 6px rgba(255, 255, 255, 0.4);
+}
+
+/* After the pop settles, go back to normal on idle */
+section.journey .journey-step.scroll-3d-step.in-view:not(:hover) .step-marker span {
+  transform: scale(1) translateZ(5px);
+  transition-delay: 0.6s;
+}
+
+/* Dark mode: timeline unfold */
+[data-theme="dark"] section.journey .journey-step.scroll-3d-step.in-view .step-marker span {
+  box-shadow:
+    0 12px 32px var(--red-glow),
+    0 0 0 4px rgba(221, 0, 0, 0.25),
+    inset 0 -3px 6px rgba(0, 0, 0, 0.35),
+    inset 0 3px 6px rgba(255, 255, 255, 0.2);
+}
+
+
+/* ============================================================
+   RESPONSIVE OVERRIDES — Touch / Mobile
+   ============================================================ */
+
+/* Disable flip on devices that cannot hover (touch) */
+@media (hover: none) {
+  .service-card:hover .service-card-inner,
+  [dir="rtl"] .service-card:hover .service-card-inner {
+    transform: none;
+  }
+
+  /* Show back content below front instead */
+  .service-card .service-card-inner {
+    transform-style: flat;
+  }
+
+  .service-card-front {
+    position: relative;
+    backface-visibility: visible;
+    -webkit-backface-visibility: visible;
+  }
+
+  .service-card-back {
+    position: relative;
+    inset: auto;
+    transform: none;
+    backface-visibility: visible;
+    -webkit-backface-visibility: visible;
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+    min-height: auto;
+    padding: 1.5rem;
+  }
+
+  [dir="rtl"] .service-card-back {
+    transform: none;
+  }
+
+  /* Disable tilt on touch */
+  section.success .success-card[data-glass]::before {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Disable card flip on small screens */
+  .service-card:hover .service-card-inner,
+  [dir="rtl"] .service-card:hover .service-card-inner {
+    transform: none;
+  }
+
+  .service-card .service-card-inner {
+    transform-style: flat;
+    min-height: auto;
+  }
+
+  .service-card-front {
+    position: relative;
+    backface-visibility: visible;
+    -webkit-backface-visibility: visible;
+  }
+
+  .service-card-back {
+    position: relative;
+    inset: auto;
+    transform: none;
+    backface-visibility: visible;
+    -webkit-backface-visibility: visible;
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+    min-height: auto;
+    padding: 1.25rem;
+  }
+
+  [dir="rtl"] .service-card-back {
+    transform: none;
+  }
+
+  /* Reduce globe size on mobile */
+  .globe-container {
+    width: 140px;
+    height: 140px;
+  }
+
+  .globe-3d {
+    width: 140px;
+    height: 140px;
+  }
+
+  .globe-3d::after {
+    width: 42px;
+    height: 56px;
+  }
+
+  .globe-dot--morocco,
+  .globe-dot--germany {
+    width: 7px;
+    height: 7px;
+  }
+
+  /* Reduce flag size */
+  .flag-3d {
+    width: 90px;
+    height: 60px;
+  }
+
+  /* Disable tilt reflection on mobile */
+  section.success .success-card[data-glass]::before {
+    display: none;
+  }
+
+  /* Simplify timeline animation on mobile */
+  section.journey .journey-step.scroll-3d-step {
+    transform: perspective(800px) rotateX(-30deg);
+  }
+
+  section.journey .journey-step.scroll-3d-step:nth-child(n) {
+    transition-delay: 0s;
+  }
+}
+
 
 /* ============================================================
    END — All sections complete
