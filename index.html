@@ -7,6 +7,9 @@
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
     <link rel="icon" type="image/webp" sizes="192x192" href="assets/icon-192.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#dd0000">
+    <meta name="mobile-web-app-capable" content="yes">
     <meta name="description" content="Alfa Haus Goethe — Institut allemand spécialisé dans l'enseignement de la langue allemande et l'orientation vers les études et la formation professionnelle en Allemagne. Mohammedia, Maroc.">
     <meta name="keywords" content="cours allemand Mohammedia, apprendre allemand Maroc, Goethe institut Mohammedia, Ausbildung Maroc, visa Allemagne, formation allemand, A1 A2 B1 B2, Alfa Haus Goethe">
     <link rel="alternate" hreflang="ar" href="https://alfahausgoethe.ma/?lang=ar">
@@ -81,6 +84,7 @@
     </script>
 </head>
 <body>
+<a href="#hero" class="skip-link">Aller au contenu principal</a>
 
 <!-- ============ URGENCY BANNER ============ -->
 <div class="urgency-banner" id="urgencyBanner">
@@ -88,8 +92,8 @@
         <div class="urgency-pulse"></div>
         <span class="urgency-text" data-i18n="urgency.text">الأماكن محدودة — دورة سبتمبر 2026</span>
         <span class="urgency-countdown" id="urgencyCountdown"></span>
-        <a href="https://wa.me/212704417799?text=أريد%20التسجيل%20في%20الدورة%20القادمة" class="urgency-btn" target="_blank" rel="noopener" data-i18n="urgency.btn">سجل الآن</a>
-        <button class="urgency-close" id="urgencyClose" aria-label="Close">&times;</button>
+        <a href="https://wa.me/212704417799?text=Bonjour%2C%20je%20souhaite%20m'inscrire%20au%20prochain%20cours" class="urgency-btn" target="_blank" rel="noopener" data-i18n="urgency.btn">سجل الآن</a>
+        <button class="urgency-close" id="urgencyClose" aria-label="Fermer la bannière">&times;</button>
     </div>
 </div>
 
@@ -109,12 +113,12 @@
             <li><a href="#faq" data-i18n="nav.faq">الأسئلة</a></li>
             <li><a href="#contact" class="nav-cta" data-i18n="nav.contact">تواصل معنا</a></li>
         </ul>
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <button class="theme-toggle" id="themeToggle" aria-label="Basculer le mode sombre">
             <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
             <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
         </button>
         <div class="lang-switcher" id="langSwitcher">
-            <button class="lang-current" id="langCurrent" aria-label="Change language">
+            <button class="lang-current" id="langCurrent" aria-label="Changer la langue">
                 <span class="lang-flag" id="langFlag">🇲🇦</span>
                 <span class="lang-code" id="langCode">AR</span>
                 <svg class="lang-chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/></svg>
@@ -125,7 +129,7 @@
                 <button class="lang-option" data-lang="en"><span class="lang-flag">🇬🇧</span><span class="lang-name">English</span><span class="lang-code-sm">EN</span></button>
             </div>
         </div>
-        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
     </div>
 </nav>
 
@@ -160,7 +164,7 @@
             <p class="hero-ed__sub hero-reveal" data-reveal-delay="0.6" data-i18n="hero.subtitle">معهد متخصص في تعليم اللغة الألمانية والتوجيه نحو الدراسة والتكوين المهني بألمانيا — من المحمدية إلى ألمانيا، نرافقك في كل خطوة.</p>
 
             <div class="hero-ed__actions hero-reveal" data-reveal-delay="0.8">
-                <a href="https://wa.me/212704417799?text=مرحبا%2C%20أريد%20معلومات%20عن%20دورات%20اللغة%20الألمانية" class="hero-ed__btn hero-ed__btn--wa" target="_blank" rel="noopener">
+                <a href="https://wa.me/212704417799?text=Bonjour%2C%20je%20voudrais%20des%20informations%20sur%20les%20cours%20d'allemand" class="hero-ed__btn hero-ed__btn--wa" target="_blank" rel="noopener">
                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                     <span data-i18n="hero.cta.whatsapp">سجّل الآن عبر واتساب</span>
                 </a>
@@ -406,7 +410,7 @@
             </div>
         </div>
         <div class="journey-cta animate-on-scroll">
-            <a href="https://wa.me/212704417799?text=أريد%20أن%20أبدأ%20رحلتي%20نحو%20ألمانيا" class="btn btn-primary btn-whatsapp btn-lg btn-magnetic" target="_blank" rel="noopener">
+            <a href="https://wa.me/212704417799?text=Bonjour%2C%20je%20veux%20commencer%20mon%20parcours%20vers%20l'Allemagne" class="btn btn-primary btn-whatsapp btn-lg btn-magnetic" target="_blank" rel="noopener">
                 <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                 <span data-i18n="journey.cta">ابدأ رحلتك الآن</span>
             </a>
@@ -744,6 +748,7 @@
     </div>
 </section>
 
+
 <!-- ============ FAQ ============ -->
 <section class="faq section section-3d" id="faq">
     <div class="container">
@@ -780,7 +785,7 @@
         </div>
         <div class="faq-cta animate-on-scroll">
             <p data-i18n="faq.more">لم تجد جوابك؟</p>
-            <a href="https://wa.me/212704417799?text=عندي%20سؤال%20بخصوص%20الدورات" class="btn btn-primary btn-whatsapp btn-magnetic" target="_blank" rel="noopener">
+            <a href="https://wa.me/212704417799?text=Bonjour%2C%20j'ai%20une%20question%20sur%20les%20cours" class="btn btn-primary btn-whatsapp btn-magnetic" target="_blank" rel="noopener">
                 <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                 <span data-i18n="faq.askBtn">اسألنا عبر واتساب</span>
             </a>
@@ -805,7 +810,7 @@
                 <p class="cta-subtitle" data-i18n="cta.subtitle">Commencez votre parcours vers l'Allemagne aujourd'hui</p>
                 <p class="cta-desc" data-i18n="cta.text">سجل الآن في دورات اللغة الألمانية واحصل على توجيه متخصص لتحقيق حلمك.</p>
                 <div class="cta-actions">
-                    <a href="https://wa.me/212704417799?text=أريد%20التسجيل%20في%20الدورة%20القادمة" class="btn btn-primary btn-whatsapp btn-lg btn-magnetic" target="_blank" rel="noopener">
+                    <a href="https://wa.me/212704417799?text=Bonjour%2C%20je%20souhaite%20m'inscrire%20au%20prochain%20cours" class="btn btn-primary btn-whatsapp btn-lg btn-magnetic" target="_blank" rel="noopener">
                         <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                         <span data-i18n="cta.btn.whatsapp">سجل الآن عبر واتساب</span>
                     </a>
@@ -832,7 +837,7 @@
             <h2 data-i18n="footer.cta.title">ابدأ رحلتك نحو ألمانيا اليوم</h2>
             <p data-i18n="footer.cta.sub">سجّل الآن واحصل على استشارة مجانية</p>
             <div class="footer-neg__cta-actions">
-                <a href="https://wa.me/212704417799?text=أريد%20التسجيل%20في%20الدورة%20القادمة" class="footer-neg__btn footer-neg__btn--wa" target="_blank" rel="noopener">
+                <a href="https://wa.me/212704417799?text=Bonjour%2C%20je%20souhaite%20m'inscrire%20au%20prochain%20cours" class="footer-neg__btn footer-neg__btn--wa" target="_blank" rel="noopener">
                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                     <span data-i18n="footer.cta.wa">سجّل عبر واتساب</span>
                 </a>
@@ -844,7 +849,7 @@
         </div>
         <div class="footer-neg__grid">
             <div class="footer-neg__brand">
-                <div class="nav-logo footer-logo"><img src="assets/alfa-haus-goethe-logo.webp" alt="Alfa Haus Goethe" class="nav-logo-img footer-logo-img"><span class="logo-text">Alfa Haus Goethe</span></div>
+                <div class="nav-logo footer-logo"><img src="assets/alfa-haus-goethe-logo.webp" alt="Alfa Haus Goethe" class="nav-logo-img footer-logo-img" loading="lazy"><span class="logo-text">Alfa Haus Goethe</span></div>
                 <p data-i18n="footer.about">معهد متخصص في تعليم اللغة الألمانية والتوجيه نحو الدراسة والتكوين المهني بألمانيا.</p>
                 <div class="footer-neg__social">
                     <a href="https://instagram.com/alfa.hausgoethe" target="_blank" rel="noopener" class="footer-neg__social-link" aria-label="Instagram">
@@ -907,17 +912,17 @@
 <!-- ============ FLOATING WHATSAPP WITH BUBBLE ============ -->
 <div class="whatsapp-wrapper" id="whatsappWrapper">
     <div class="whatsapp-bubble" id="whatsappBubble">
-        <button class="whatsapp-bubble-close" id="whatsappBubbleClose" aria-label="Close">&times;</button>
+        <button class="whatsapp-bubble-close" id="whatsappBubbleClose" aria-label="Fermer">&times;</button>
         <p data-i18n="wa.bubble">مرحباً! هل تريد معلومات عن دورات اللغة الألمانية؟ تواصل معنا الآن</p>
     </div>
-    <a href="https://wa.me/212704417799?text=مرحبا%2C%20أريد%20معلومات%20عن%20دورات%20اللغة%20الألمانية" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <a href="https://wa.me/212704417799?text=Bonjour%2C%20je%20voudrais%20des%20informations%20sur%20les%20cours%20d'allemand" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     </a>
 </div>
 
 <!-- ============ MOBILE STICKY CTA ============ -->
 <div class="mobile-sticky-cta" id="mobileCta">
-    <a href="https://wa.me/212704417799?text=أريد%20التسجيل" class="mcta-btn mcta-whatsapp" target="_blank" rel="noopener">
+    <a href="https://wa.me/212704417799?text=Bonjour%2C%20je%20souhaite%20m'inscrire" class="mcta-btn mcta-whatsapp" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         <span class="mcta-label" data-i18n="mobile.cta.wa">واتساب</span>
     </a>
@@ -937,5 +942,6 @@
 <script src="i18n.min.js"></script>
 <script src="script.min.js"></script>
 <!-- <script src="gsap-animations.min.js"></script> -->
+<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js').catch(function(){})}</script>
 </body>
 </html>

@@ -1,0 +1,31 @@
+{
+  "name": "Alfa Haus Goethe — Institut Allemand Mohammedia",
+  "short_name": "Alfa Haus Goethe",
+  "description": "Cours d'allemand, préparation aux examens Goethe, orientation pour études et Ausbildung en Allemagne.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#dd0000",
+  "lang": "fr",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["education"],
+  "orientation": "portrait-primary"
+}
