@@ -124,8 +124,8 @@
     --mobile-nav-bg: #161616;
     --mobile-nav-border: #2a2a2a;
     --footer-bg: #0a0a0a;
-    --footer-text: rgba(255,255,255,0.6);
-    --footer-muted: rgba(255,255,255,0.35);
+    --footer-text: rgba(255,255,255,0.75);
+    --footer-muted: rgba(255,255,255,0.5);
     --footer-border: rgba(255,255,255,0.06);
     --proof-bg: #161616;
     --placeholder-bg: linear-gradient(135deg, #1a1a1a 0%, #222222 100%);
@@ -181,6 +181,26 @@ a {
 img, video, iframe {
     max-width: 100%;
     display: block;
+}
+
+:focus-visible {
+    outline: 2px solid var(--red);
+    outline-offset: 2px;
+}
+
+.skip-link {
+    position: absolute;
+    top: -100%;
+    left: 16px;
+    background: var(--red);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: var(--radius-md);
+    z-index: 9999;
+    font-weight: 600;
+}
+.skip-link:focus {
+    top: 8px;
 }
 
 ul { list-style: none; }
@@ -363,8 +383,15 @@ section[id] {
     transition: width 0.3s ease;
 }
 
-.nav-links a:hover::after {
+.nav-links a:hover::after,
+.nav-links a:focus-visible::after {
     width: 100%;
+}
+
+.nav-links a:focus-visible {
+    outline: 2px solid var(--red);
+    outline-offset: 4px;
+    border-radius: 2px;
 }
 
 .nav-cta {
@@ -389,7 +416,9 @@ section[id] {
     background: none;
     border: none;
     cursor: pointer;
-    padding: 4px;
+    padding: 8px;
+    min-width: 44px;
+    min-height: 44px;
     z-index: 1001;
 }
 
@@ -648,7 +677,7 @@ body.has-urgency-banner .hero-ed {
 }
 
 [data-theme="dark"] .hero-ed__title-script {
-    color: rgba(255,255,255,0.35);
+    color: rgba(255,255,255,0.55);
 }
 
 .hero-ed__title-germany {
@@ -708,7 +737,7 @@ html[dir="ltr"] .hero-ed__title-germany::after {
 }
 
 [data-theme="dark"] .hero-ed__sub {
-    color: rgba(255,255,255,0.5);
+    color: rgba(255,255,255,0.7);
 }
 
 /* --- Actions --- */
@@ -850,7 +879,7 @@ html[dir="ltr"] .hero-ed__title-germany::after {
     margin-top: 2px;
 }
 
-[data-theme="dark"] .hero-ed__stat small { color: rgba(255,255,255,0.4); }
+[data-theme="dark"] .hero-ed__stat small { color: rgba(255,255,255,0.6); }
 
 .hero-ed__stat-div {
     width: 1px;
@@ -5983,3 +6012,4 @@ html[dir="rtl"] .mcta-label {
     opacity: 1 !important;
     transform: none !important;
 }
+
