@@ -550,4 +550,25 @@
         console.warn('Hero video element not found in DOM');
     }
 
+    // --- WhatsApp welcome bubble ---
+    var bubble = document.getElementById('whatsappBubble');
+    var bubbleClose = document.getElementById('whatsappBubbleClose');
+    if (bubble) {
+        var bubbleDismissed = false;
+        try { bubbleDismissed = sessionStorage.getItem('ahg-wa-bubble') === '1'; } catch (e) {}
+        if (!bubbleDismissed) {
+            setTimeout(function () {
+                bubble.classList.add('visible');
+            }, 4000);
+        }
+        if (bubbleClose) {
+            bubbleClose.addEventListener('click', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                bubble.classList.remove('visible');
+                try { sessionStorage.setItem('ahg-wa-bubble', '1'); } catch (e) {}
+            });
+        }
+    }
+
 })();
