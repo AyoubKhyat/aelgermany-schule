@@ -292,7 +292,8 @@ var I18N = (function () {
             // Mobile CTA
             "mobile.cta.wa": "واتساب",
             "mobile.cta.call": "اتصل بنا",
-            "mobile.cta.programs": "البرامج"
+            "mobile.cta.programs": "البرامج",
+            "wa.bubble": "مرحباً! هل تريد معلومات عن دورات اللغة الألمانية؟ تواصل معنا الآن 🇩🇪"
         },
 
         // ──────────── FRENCH ────────────
@@ -559,7 +560,8 @@ var I18N = (function () {
 
             "mobile.cta.wa": "WhatsApp",
             "mobile.cta.call": "Appeler",
-            "mobile.cta.programs": "Programmes"
+            "mobile.cta.programs": "Programmes",
+            "wa.bubble": "Bonjour ! Vous souhaitez des informations sur nos cours d'allemand ? Contactez-nous maintenant 🇩🇪"
         },
 
         // ──────────── ENGLISH ────────────
@@ -826,7 +828,8 @@ var I18N = (function () {
 
             "mobile.cta.wa": "WhatsApp",
             "mobile.cta.call": "Call Us",
-            "mobile.cta.programs": "Programs"
+            "mobile.cta.programs": "Programs",
+            "wa.bubble": "Hello! Want info about our German language courses? Contact us now 🇩🇪"
         }
     };
 
